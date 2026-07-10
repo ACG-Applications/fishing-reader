@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
 
   <!-- Theme color for mobile browsers -->
-  <meta name="theme-color" content="#1a3e5c" />
+  <meta name="theme-color" content="#dce8f5" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta
     name="apple-mobile-web-app-status-bar-style"
@@ -29,135 +29,135 @@
         box-sizing: border-box;
       }
 
+      /* ===== PAGE BACKGROUND ===== */
       body {
         font-family: "Hiragino Sans", "Meiryo", "Noto Sans JP", sans-serif;
         max-width: 820px;
         margin: 0 auto;
-        padding: 20px 30px;
-        background: #fafafa;
+        padding: 20px 16px;
+        background: #dce8f5; /* Light blue page background */
         color: #000000;
         font-weight: 700;
         line-height: 2.2;
-
-        /* ===== BASE FONT SIZE (will be overridden by JS if slider used) ===== */
         font-size: 18px;
       }
 
-      /* ===== STICKY HEADER - ONE LINE ===== */
+      /* ===== STICKY HEADER ===== */
       .sticky-header {
         position: sticky;
         top: 0;
         z-index: 100;
-        background: #fafafa;
-        padding: 4px 0 6px 0;
-        border-bottom: 2px solid #ccc;
+        background: #ffffff; /* Pure white header */
+        padding: 8px 6px 8px 6px;
+        border-bottom: 2px solid #b0c4d8;
         margin-bottom: 20px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 2px 4px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        font-size: 11px;
-        min-height: 32px;
+        gap: 4px 6px;
+        font-size: 13px;
+        min-height: 44px;
+        border-radius: 0 0 8px 8px;
       }
 
       .header-title {
         display: flex;
         align-items: baseline;
-        gap: 2px;
+        gap: 3px;
         white-space: nowrap;
         flex-shrink: 0;
       }
 
       .header-title .ja {
         font-weight: 900;
-        font-size: 15px;
-        color: #1a3e5c;
+        font-size: 17px;
+        color: #000000;
       }
 
       .header-title .ja ruby rt {
         font-size: 0.5em;
+        color: #8b1a1a; /* Dark red furigana */
       }
 
       .header-title .en {
         font-weight: 400;
-        font-size: 8px;
+        font-size: 10px;
         color: #6a8a9a;
         letter-spacing: 0.2px;
       }
 
       .controls-group {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 1px 3px;
+        gap: 3px 5px;
         flex-shrink: 0;
       }
 
       .controls-group .control-item {
         display: flex;
         align-items: center;
-        gap: 1px;
+        gap: 2px;
         line-height: 1.2;
       }
 
       .controls-group .control-item label {
         font-weight: 700;
-        font-size: 10px;
+        font-size: 12px;
         display: flex;
         align-items: center;
-        gap: 1px;
+        gap: 2px;
         cursor: pointer;
-        color: #000;
+        color: #000000;
         white-space: nowrap;
+        padding: 2px 4px;
       }
 
       .controls-group .control-item label input[type="checkbox"] {
-        width: 12px;
-        height: 12px;
-        accent-color: #222;
+        width: 15px;
+        height: 15px;
+        accent-color: #8b1a1a;
         cursor: pointer;
         margin: 0;
       }
 
       .controls-group .control-item .en-label {
         font-weight: 400;
-        font-size: 6px;
+        font-size: 8px;
         color: #6a8a9a;
         margin-left: 1px;
-        display: none;
+        display: block; /* Always show */
       }
 
       .controls-group .sep {
-        color: #ccc;
+        color: #b0c4d8;
         font-weight: 300;
         user-select: none;
-        font-size: 8px;
+        font-size: 10px;
       }
 
-      /* ===== FONT SIZE SLIDER - COMPACT ===== */
+      /* ===== FONT SIZE SLIDER ===== */
       .font-slider-wrap {
         display: flex;
         align-items: center;
-        gap: 2px;
+        gap: 3px;
         background: #e8f0f8;
-        padding: 1px 4px 1px 4px;
+        padding: 2px 8px 2px 6px;
         border-radius: 20px;
         border: 1px solid #b0cce0;
-        height: 22px;
+        height: 30px;
         flex-shrink: 0;
       }
 
       .font-slider-wrap .slider-icon {
-        font-size: 10px;
+        font-size: 13px;
         line-height: 1;
       }
 
       .font-slider-wrap input[type="range"] {
-        width: 40px;
-        height: 3px;
+        width: 60px;
+        height: 4px;
         -webkit-appearance: none;
         appearance: none;
         background: #b0cce0;
@@ -170,8 +170,8 @@
       .font-slider-wrap input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
         background: #2c6b9e;
         cursor: pointer;
@@ -180,8 +180,8 @@
       }
 
       .font-slider-wrap input[type="range"]::-moz-range-thumb {
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
         background: #2c6b9e;
         cursor: pointer;
@@ -191,9 +191,9 @@
 
       .font-slider-wrap .slider-value {
         font-weight: 700;
-        font-size: 9px;
+        font-size: 12px;
         color: #1a3e5c;
-        min-width: 16px;
+        min-width: 20px;
         text-align: center;
       }
 
@@ -201,30 +201,30 @@
       .audio-wrap {
         display: flex;
         align-items: center;
-        gap: 1px;
+        gap: 3px;
         background: #eef4f9;
-        padding: 1px 4px 1px 3px;
+        padding: 2px 8px 2px 6px;
         border-radius: 30px;
         border: 1px solid #c0d4e0;
-        height: 22px;
+        height: 30px;
         flex-shrink: 0;
         margin-left: auto;
       }
 
       .audio-wrap .audio-label {
         font-weight: 700;
-        font-size: 10px;
+        font-size: 13px;
         color: #003366;
         line-height: 1;
       }
 
       .audio-wrap audio {
-        max-width: 55px;
+        max-width: 80px;
         width: 100%;
-        height: 16px;
+        height: 20px;
         outline: none;
         border-radius: 30px;
-        min-width: 42px;
+        min-width: 60px;
         display: block;
       }
 
@@ -235,7 +235,7 @@
 
       .audio-wrap audio::-webkit-media-controls-play-button {
         display: block !important;
-        transform: scale(0.7);
+        transform: scale(0.8);
       }
 
       .audio-wrap audio::-webkit-media-controls-timeline {
@@ -251,18 +251,18 @@
 
       /* Speed dropdown */
       .speed-select {
-        font-size: 8px;
+        font-size: 10px;
         font-weight: 600;
         color: #1a4a6a;
         background: #dce8f0;
         border: 1px solid #b8c8d8;
         border-radius: 12px;
-        padding: 0 2px;
-        height: 16px;
+        padding: 0 4px;
+        height: 20px;
         cursor: pointer;
         font-family: inherit;
         outline: none;
-        min-width: 22px;
+        min-width: 32px;
         flex-shrink: 0;
       }
 
@@ -270,18 +270,18 @@
       .pdf-link {
         display: flex;
         align-items: center;
-        gap: 1px;
-        font-size: 8px;
+        gap: 2px;
+        font-size: 11px;
         font-weight: 600;
         color: #1a5a7a;
         background: #e8f0f8;
-        padding: 1px 4px 1px 3px;
+        padding: 2px 10px 2px 6px;
         border-radius: 20px;
         border: 1px solid #b0cce0;
         text-decoration: none;
         white-space: nowrap;
         transition: background 0.2s;
-        height: 20px;
+        height: 26px;
         flex-shrink: 0;
       }
 
@@ -290,43 +290,91 @@
       }
 
       .pdf-link .icon {
-        font-size: 9px;
+        font-size: 12px;
       }
 
       .pdf-link .label {
         font-weight: 600;
-        font-size: 7px;
+        font-size: 10px;
       }
 
-      /* ===== MAIN CONTENT ===== */
+      /* ===== MAIN CONTENT - PURE WHITE SENTENCE BACKGROUNDS ===== */
       h1 {
         text-align: center;
         font-weight: 900;
         font-size: 2.2em;
         margin-bottom: 10px;
         margin-top: 0;
+        color: #000000;
+        background: #ffffff;
+        padding: 12px;
+        border-radius: 12px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      }
+
+      h1 ruby rt {
+        color: #8b1a1a; /* Dark red furigana */
       }
 
       .sentence {
         margin-bottom: 0.2em;
         font-size: 1em;
+        background: #ffffff; /* Pure white background */
+        padding: 8px 16px;
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        transition: box-shadow 0.2s;
       }
 
+      .sentence:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Furigana styling - Dark Red */
+      .sentence ruby rt,
+      h1 ruby rt,
+      .question ruby rt,
+      .answer ruby rt,
+      .think-block ruby rt,
+      .qa-block ruby rt,
+      .page-footer ruby rt {
+        color: #8b1a1a; /* Dark red furigana */
+        font-weight: 400;
+      }
+
+      /* Japanese text - Black */
+      .sentence,
+      .question,
+      .answer,
+      .think-block,
+      .qa-block,
+      .page-footer,
+      h1,
+      .header-title .ja {
+        color: #000000;
+      }
+
+      /* Translations - Dark Blue */
       .sentence .translation {
         display: none;
         font-weight: 400;
         font-size: 0.8em;
-        color: #444;
+        color: #1a3a7a; /* Dark blue */
         line-height: 1.6;
         margin-top: -0.2em;
         margin-bottom: 0.6em;
         padding-left: 12px;
-        border-left: 3px solid #aaa;
+        border-left: 3px solid #4a7aaa;
+        background: transparent;
+      }
+
+      .show-translation .sentence .translation {
+        display: block;
       }
 
       /* ===== QA BLOCK ===== */
       .qa-block {
-        background: #f5f9ff;
+        background: #ffffff; /* Pure white */
         border: 2px solid #2c6b9e;
         border-radius: 20px;
         padding: 16px 20px 20px;
@@ -347,7 +395,11 @@
       .qa-block .section-header h2 {
         font-size: 1.4em;
         margin: 0;
-        color: #1a3e5c;
+        color: #000000;
+      }
+
+      .qa-block .section-header h2 ruby rt {
+        color: #8b1a1a;
       }
 
       .qa-block .section-header .en-header {
@@ -368,20 +420,22 @@
 
       .question {
         font-weight: 700;
-        color: #003366;
+        color: #000000;
         font-size: 1em;
         margin-bottom: 0.1em;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         gap: 2px;
+        background: transparent;
+        padding: 0;
       }
 
       .question .q-translation {
         display: none;
         font-weight: 400;
         font-size: 0.75em;
-        color: #5a6a7a;
+        color: #1a3a7a; /* Dark blue */
         margin-left: 8px;
       }
 
@@ -391,8 +445,8 @@
 
       .answer {
         font-weight: 400;
-        color: #1f4b3c;
-        background: #e8f0ee;
+        color: #000000;
+        background: #f0f5f0;
         padding: 4px 12px;
         border-radius: 30px;
         display: inline-flex;
@@ -410,11 +464,11 @@
         display: none;
         font-weight: 400;
         font-size: 0.8em;
-        color: #444;
+        color: #1a3a7a; /* Dark blue */
         line-height: 1.5;
         margin-top: 2px;
         padding-left: 8px;
-        border-left: 2px solid #999;
+        border-left: 2px solid #4a7aaa;
         margin-left: 4px;
         background: transparent;
         border-radius: 0;
@@ -462,11 +516,12 @@
 
       /* ===== THINK BLOCK ===== */
       .think-block {
-        background: #f0f4fa;
+        background: #ffffff; /* Pure white */
         border: 2px solid #b0b8c9;
         border-radius: 20px;
         padding: 16px 20px 20px;
         margin: 30px 0 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
       }
 
       .think-block .section-header {
@@ -482,7 +537,11 @@
       .think-block .section-header h2 {
         font-size: 1.4em;
         margin: 0;
-        color: #2c3e50;
+        color: #000000;
+      }
+
+      .think-block .section-header h2 ruby rt {
+        color: #8b1a1a;
       }
 
       .think-block .section-header .en-header {
@@ -507,14 +566,15 @@
         background: #2c6b9e;
         color: white;
         border: none;
-        padding: 4px 14px 4px 10px;
+        padding: 6px 16px 6px 12px;
         border-radius: 30px;
-        font-size: 0.85em;
+        font-size: 0.9em;
         font-weight: 600;
         cursor: pointer;
         transition: background 0.2s;
         font-family: inherit;
         line-height: 1.4;
+        min-height: 40px;
       }
 
       .tts-button:hover {
@@ -563,7 +623,9 @@
         cursor: pointer;
         padding: 0 4px;
         color: #2c6b9e;
-        transition: color 0.2s, transform 0.1s;
+        transition:
+          color 0.2s,
+          transform 0.1s;
         vertical-align: middle;
         line-height: 1;
       }
@@ -604,18 +666,23 @@
         border-top: 2px solid #dde5ed;
         font-size: 0.8em;
         font-weight: 400;
-        color: #4a5a6a;
+        color: #000000;
         line-height: 1.8;
-        background: #f7f9fb;
+        background: #ffffff; /* Pure white */
         padding: 16px 20px;
         border-radius: 12px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
       }
 
       .page-footer .footer-title {
         font-weight: 700;
         font-size: 0.9em;
-        color: #1a3e5c;
+        color: #000000;
         margin-bottom: 2px;
+      }
+
+      .page-footer .footer-title ruby rt {
+        color: #8b1a1a;
       }
 
       .page-footer .footer-item {
@@ -624,7 +691,7 @@
 
       .page-footer .footer-item .label {
         font-weight: 600;
-        color: #2a4a6a;
+        color: #000000;
       }
 
       .page-footer .footer-item .sub {
@@ -649,112 +716,181 @@
       /* ===== RESPONSIVE ===== */
       @media (max-width: 700px) {
         body {
-          padding: 12px 14px;
+          padding: 12px 12px;
         }
         .sticky-header {
-          gap: 1px 2px;
-          padding: 2px 2px 4px 2px;
+          gap: 3px 4px;
+          padding: 6px 4px 6px 4px;
+          font-size: 12px;
+          min-height: 40px;
         }
-        .controls-group .control-item .en-label {
-          display: none;
-        }
-        .controls-group .sep {
-          display: none;
+        .header-title .ja {
+          font-size: 15px;
         }
         .header-title .en {
           display: none;
         }
-        .header-title .ja {
-          font-size: 13px;
+        .controls-group .control-item label {
+          font-size: 11px;
         }
-        .font-slider-wrap input[type="range"] {
-          width: 30px;
+        .controls-group .control-item label input[type="checkbox"] {
+          width: 14px;
+          height: 14px;
         }
-        .audio-wrap audio {
-          max-width: 40px;
-          min-width: 32px;
+        .controls-group .control-item .en-label {
+          display: none; /* Hide on small screens */
         }
-        .audio-wrap .audio-label {
-          font-size: 8px;
-        }
-        .pdf-link .label {
+        .controls-group .sep {
           display: none;
         }
-        .pdf-link .icon {
-          font-size: 8px;
+        .font-slider-wrap {
+          height: 28px;
+          padding: 2px 6px;
+        }
+        .font-slider-wrap input[type="range"] {
+          width: 50px;
+        }
+        .font-slider-wrap .slider-value {
+          font-size: 11px;
+        }
+        .audio-wrap {
+          height: 28px;
+          padding: 2px 6px;
+        }
+        .audio-wrap audio {
+          max-width: 60px;
+          min-width: 50px;
+          height: 18px;
+        }
+        .audio-wrap .audio-label {
+          font-size: 11px;
+        }
+        .speed-select {
+          font-size: 9px;
+          height: 18px;
+          min-width: 28px;
         }
         .pdf-link {
-          padding: 1px 3px;
+          height: 24px;
+          font-size: 10px;
+          padding: 2px 8px 2px 5px;
+        }
+        .pdf-link .icon {
+          font-size: 10px;
+        }
+        .pdf-link .label {
+          font-size: 9px;
+        }
+        .qa-block {
+          padding: 14px 16px 16px;
+        }
+        .think-block {
+          padding: 14px 16px 16px;
+        }
+        .tts-button {
+          min-height: 36px;
+          font-size: 0.85em;
+          padding: 4px 14px 4px 10px;
+        }
+        .sentence {
+          padding: 6px 12px;
         }
       }
 
       @media (max-width: 500px) {
         body {
-          padding: 8px 10px;
+          padding: 8px 8px;
           font-size: 16px;
         }
         .sticky-header {
-          gap: 1px 2px;
-          padding: 2px 1px 3px 1px;
-          font-size: 9px;
+          gap: 2px 3px;
+          padding: 4px 3px 4px 3px;
+          font-size: 11px;
+          min-height: 36px;
         }
         .header-title .ja {
-          font-size: 12px;
+          font-size: 14px;
         }
         .controls-group .control-item label {
-          font-size: 8px;
+          font-size: 10px;
         }
         .controls-group .control-item label input[type="checkbox"] {
-          width: 10px;
-          height: 10px;
+          width: 13px;
+          height: 13px;
         }
-        .font-slider-wrap input[type="range"] {
-          width: 24px;
+        .controls-group .control-item .en-label {
+          display: none;
         }
         .font-slider-wrap {
-          height: 18px;
-          padding: 0 2px;
+          height: 24px;
+          padding: 1px 4px;
+          gap: 2px;
+        }
+        .font-slider-wrap input[type="range"] {
+          width: 40px;
         }
         .font-slider-wrap .slider-value {
-          font-size: 7px;
-          min-width: 12px;
-        }
-        .font-slider-wrap .slider-icon {
-          font-size: 8px;
-        }
-        .audio-wrap {
-          height: 18px;
-          padding: 0 2px;
-        }
-        .audio-wrap audio {
-          max-width: 32px;
-          min-width: 28px;
-          height: 14px;
-        }
-        .audio-wrap .audio-label {
-          font-size: 7px;
-        }
-        .speed-select {
-          font-size: 6px;
-          height: 13px;
+          font-size: 10px;
           min-width: 16px;
         }
-        .pdf-link {
+        .font-slider-wrap .slider-icon {
+          font-size: 10px;
+        }
+        .audio-wrap {
+          height: 24px;
+          padding: 1px 4px;
+          gap: 2px;
+        }
+        .audio-wrap audio {
+          max-width: 45px;
+          min-width: 38px;
           height: 16px;
-          padding: 0 2px;
+        }
+        .audio-wrap .audio-label {
+          font-size: 10px;
+        }
+        .speed-select {
+          font-size: 8px;
+          height: 16px;
+          min-width: 24px;
+        }
+        .pdf-link {
+          height: 20px;
+          font-size: 9px;
+          padding: 1px 5px 1px 4px;
         }
         .pdf-link .icon {
-          font-size: 7px;
+          font-size: 9px;
+        }
+        .pdf-link .label {
+          font-size: 8px;
         }
         .qa-block {
-          padding: 12px 14px 16px;
+          padding: 10px 12px 14px;
         }
         .think-block {
-          padding: 12px 14px 16px;
+          padding: 10px 12px 14px;
+        }
+        .tts-button {
+          min-height: 32px;
+          font-size: 0.8em;
+          padding: 3px 10px 3px 8px;
+        }
+        .tts-button .icon {
+          font-size: 0.9em;
         }
         .page-footer {
-          padding: 12px 14px;
+          padding: 10px 12px;
           font-size: 0.7em;
+        }
+        .question .q-translation {
+          font-size: 0.7em;
+        }
+        .answer .translation {
+          font-size: 0.75em;
+        }
+        .sentence {
+          padding: 4px 10px;
         }
       }
 
@@ -764,16 +900,10 @@
       }
       hr {
         margin: 30px 0;
-        border: 1px solid #ccc;
+        border: 1px solid #b0c4d8;
       }
       ruby {
         ruby-align: center;
-      }
-      rt {
-        font-size: 0.55em;
-        font-weight: 400;
-        color: #222;
-        letter-spacing: 0.5px;
       }
       .no-furigana rt {
         display: none;
@@ -781,24 +911,10 @@
       .show-translation .translation {
         display: block;
       }
-
-      /* Font size classes applied by JS */
-      .font-size-small {
-        font-size: 14px;
-      }
-      .font-size-medium {
-        font-size: 18px;
-      }
-      .font-size-large {
-        font-size: 22px;
-      }
-      .font-size-xlarge {
-        font-size: 26px;
-      }
     </style>
   </head>
   <body>
-    <!-- ===== STICKY HEADER - ONE LINE ===== -->
+    <!-- ===== STICKY HEADER ===== -->
     <div class="sticky-header" id="stickyHeader">
       <div class="header-title">
         <span class="ja"
@@ -816,32 +932,6 @@
               ><ruby>振<rt>ふ</rt></ruby
               >り<ruby>仮名<rt>がな</rt></ruby
               ><span class="en-label">(Furigana)</span></span
-            >
-          </label>
-        </div>
-
-        <span class="sep">|</span>
-
-        <div class="control-item">
-          <label>
-            <input type="checkbox" id="boldToggle" checked />
-            <span
-              ><ruby>太<rt>ふと</rt></ruby
-              ><ruby>字<rt>じ</rt></ruby
-              ><span class="en-label">(Bold)</span></span
-            >
-          </label>
-        </div>
-
-        <span class="sep">|</span>
-
-        <div class="control-item">
-          <label>
-            <input type="checkbox" id="blackToggle" checked />
-            <span
-              ><ruby>黒<rt>くろ</rt></ruby
-              ><ruby>字<rt>じ</rt></ruby
-              ><span class="en-label">(Black)</span></span
             >
           </label>
         </div>
@@ -868,7 +958,7 @@
             type="range"
             id="fontSizeSlider"
             min="12"
-            max="26"
+            max="28"
             value="18"
             step="1"
             aria-label="Font size"
@@ -908,14 +998,11 @@
           <option value="0.75">0.75×</option>
           <option value="1" selected>1×</option>
           <option value="1.25">1.25×</option>
-          <option value="1.5">1.5×</option>
-          <option value="2">2×</option>
         </select>
       </div>
     </div>
 
     <!-- ===== MAIN CONTENT ===== -->
-    <!-- ===== (same content as before - I'll include it below) ===== -->
     <h1>
       <ruby>魚<rt>さかな</rt></ruby
       >つり
@@ -1963,21 +2050,11 @@
       (function () {
         // ===== TOGGLES =====
         const furiganaToggle = document.getElementById("furiganaToggle");
-        const boldToggle = document.getElementById("boldToggle");
-        const blackToggle = document.getElementById("blackToggle");
         const translationToggle = document.getElementById("translationToggle");
         const body = document.body;
 
         furiganaToggle.addEventListener("change", function () {
           body.classList.toggle("no-furigana", !this.checked);
-        });
-
-        boldToggle.addEventListener("change", function () {
-          body.style.fontWeight = this.checked ? "700" : "400";
-        });
-
-        blackToggle.addEventListener("change", function () {
-          body.style.color = this.checked ? "#000000" : "#444444";
         });
 
         translationToggle.addEventListener("change", function () {
@@ -2002,7 +2079,6 @@
         });
 
         body.classList.remove("no-furigana");
-        body.style.fontWeight = "700";
         body.style.color = "#000000";
         body.classList.remove("show-translation");
 
@@ -2011,7 +2087,6 @@
         const fontSizeDisplay = document.getElementById("fontSizeDisplay");
 
         if (fontSizeSlider && fontSizeDisplay) {
-          // Set initial value
           const initialSize = fontSizeSlider.value;
           document.body.style.fontSize = initialSize + "px";
           fontSizeDisplay.textContent = initialSize;
@@ -2020,13 +2095,6 @@
             const size = this.value;
             document.body.style.fontSize = size + "px";
             fontSizeDisplay.textContent = size;
-
-            // Update all child elements that use em/rem units
-            document.querySelectorAll(
-              ".sentence, .question, .answer, .qa-item, .think-block, .qa-block"
-            ).forEach(function (el) {
-              // They use 'em' units so they scale automatically
-            });
           });
         }
 
@@ -2047,10 +2115,7 @@
             return;
           }
 
-          // Remove English text in parentheses
           text = text.replace(/\([^)]*\)/g, "").trim();
-
-          // Remove any remaining furigana-looking text
           text = text.replace(/[（(][^）)]*[）)]/g, "").trim();
 
           if (!text) {
@@ -2093,10 +2158,8 @@
             const text = this.dataset.tts;
             if (!text) return;
 
-            // Cancel any ongoing speech
             window.speechSynthesis.cancel();
 
-            // Remove speaking class from all buttons
             document
               .querySelectorAll(".speaker-btn.speaking")
               .forEach(function (b) {
@@ -2113,7 +2176,6 @@
         const ttsCounter = document.getElementById("ttsCounter");
         const ttsTotal = document.getElementById("ttsTotal");
 
-        // Get all QA items (both main questions and think questions)
         const qaItems = document.querySelectorAll(".qa-item");
         const totalItems = qaItems.length;
         ttsTotal.textContent = totalItems;
