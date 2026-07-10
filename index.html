@@ -39,14 +39,11 @@
         font-weight: 700;
         line-height: 2.2;
 
-        /* ===== DYNAMIC FONT SIZING ===== */
-        font-size: clamp(16px, 2.2vw, 22px);
-        /* Minimum: 16px on small phones */
-        /* Scales with screen width */
-        /* Maximum: 22px on large screens */
+        /* ===== BASE FONT SIZE (will be overridden by JS if slider used) ===== */
+        font-size: 18px;
       }
 
-      /* ===== STICKY HEADER - COMPACT ===== */
+      /* ===== STICKY HEADER - ONE LINE ===== */
       .sticky-header {
         position: sticky;
         top: 0;
@@ -57,22 +54,26 @@
         margin-bottom: 20px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-items: center;
-        gap: 2px 6px;
-        font-size: clamp(10px, 1.4vw, 14px);
+        gap: 2px 4px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 11px;
+        min-height: 32px;
       }
 
       .header-title {
         display: flex;
         align-items: baseline;
-        gap: 3px;
+        gap: 2px;
         white-space: nowrap;
+        flex-shrink: 0;
       }
 
       .header-title .ja {
         font-weight: 900;
-        font-size: clamp(14px, 2vw, 20px);
+        font-size: 15px;
         color: #1a3e5c;
       }
 
@@ -82,16 +83,17 @@
 
       .header-title .en {
         font-weight: 400;
-        font-size: clamp(8px, 1vw, 12px);
+        font-size: 8px;
         color: #6a8a9a;
         letter-spacing: 0.2px;
       }
 
       .controls-group {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-items: center;
-        gap: 1px 5px;
+        gap: 1px 3px;
+        flex-shrink: 0;
       }
 
       .controls-group .control-item {
@@ -103,7 +105,7 @@
 
       .controls-group .control-item label {
         font-weight: 700;
-        font-size: clamp(10px, 1.2vw, 13px);
+        font-size: 10px;
         display: flex;
         align-items: center;
         gap: 1px;
@@ -113,8 +115,8 @@
       }
 
       .controls-group .control-item label input[type="checkbox"] {
-        width: clamp(12px, 1.4vw, 16px);
-        height: clamp(12px, 1.4vw, 16px);
+        width: 12px;
+        height: 12px;
         accent-color: #222;
         cursor: pointer;
         margin: 0;
@@ -122,51 +124,54 @@
 
       .controls-group .control-item .en-label {
         font-weight: 400;
-        font-size: clamp(6px, 0.7vw, 9px);
+        font-size: 6px;
         color: #6a8a9a;
         margin-left: 1px;
+        display: none;
       }
 
       .controls-group .sep {
         color: #ccc;
         font-weight: 300;
         user-select: none;
-        font-size: clamp(8px, 0.9vw, 11px);
+        font-size: 8px;
       }
 
-      /* ===== FONT SIZE SLIDER ===== */
+      /* ===== FONT SIZE SLIDER - COMPACT ===== */
       .font-slider-wrap {
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: 2px;
         background: #e8f0f8;
-        padding: 1px 6px 1px 6px;
+        padding: 1px 4px 1px 4px;
         border-radius: 20px;
         border: 1px solid #b0cce0;
-        height: clamp(20px, 2.6vw, 28px);
+        height: 22px;
+        flex-shrink: 0;
       }
 
       .font-slider-wrap .slider-icon {
-        font-size: clamp(10px, 1.2vw, 14px);
+        font-size: 10px;
         line-height: 1;
       }
 
       .font-slider-wrap input[type="range"] {
-        width: clamp(50px, 8vw, 90px);
-        height: 4px;
+        width: 40px;
+        height: 3px;
         -webkit-appearance: none;
         appearance: none;
         background: #b0cce0;
         border-radius: 4px;
         outline: none;
         cursor: pointer;
+        padding: 0;
       }
 
       .font-slider-wrap input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: clamp(12px, 1.4vw, 16px);
-        height: clamp(12px, 1.4vw, 16px);
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
         background: #2c6b9e;
         cursor: pointer;
@@ -175,8 +180,8 @@
       }
 
       .font-slider-wrap input[type="range"]::-moz-range-thumb {
-        width: clamp(12px, 1.4vw, 16px);
-        height: clamp(12px, 1.4vw, 16px);
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
         background: #2c6b9e;
         cursor: pointer;
@@ -186,9 +191,9 @@
 
       .font-slider-wrap .slider-value {
         font-weight: 700;
-        font-size: clamp(9px, 1vw, 12px);
+        font-size: 9px;
         color: #1a3e5c;
-        min-width: clamp(20px, 2.4vw, 30px);
+        min-width: 16px;
         text-align: center;
       }
 
@@ -196,30 +201,30 @@
       .audio-wrap {
         display: flex;
         align-items: center;
-        gap: 2px;
+        gap: 1px;
         background: #eef4f9;
-        padding: 1px 6px 1px 4px;
+        padding: 1px 4px 1px 3px;
         border-radius: 30px;
         border: 1px solid #c0d4e0;
-        height: clamp(22px, 3vw, 30px);
-        margin-left: auto;
+        height: 22px;
         flex-shrink: 0;
+        margin-left: auto;
       }
 
       .audio-wrap .audio-label {
         font-weight: 700;
-        font-size: clamp(10px, 1.2vw, 14px);
+        font-size: 10px;
         color: #003366;
         line-height: 1;
       }
 
       .audio-wrap audio {
-        max-width: clamp(50px, 10vw, 100px);
+        max-width: 55px;
         width: 100%;
-        height: clamp(16px, 2.2vw, 24px);
+        height: 16px;
         outline: none;
         border-radius: 30px;
-        min-width: clamp(42px, 7vw, 70px);
+        min-width: 42px;
         display: block;
       }
 
@@ -230,7 +235,7 @@
 
       .audio-wrap audio::-webkit-media-controls-play-button {
         display: block !important;
-        transform: scale(0.8);
+        transform: scale(0.7);
       }
 
       .audio-wrap audio::-webkit-media-controls-timeline {
@@ -246,40 +251,38 @@
 
       /* Speed dropdown */
       .speed-select {
-        font-size: clamp(7px, 0.9vw, 11px);
+        font-size: 8px;
         font-weight: 600;
         color: #1a4a6a;
         background: #dce8f0;
         border: 1px solid #b8c8d8;
         border-radius: 12px;
-        padding: 0 3px;
-        height: clamp(14px, 2vw, 20px);
+        padding: 0 2px;
+        height: 16px;
         cursor: pointer;
         font-family: inherit;
         outline: none;
-        min-width: clamp(20px, 3vw, 32px);
-      }
-
-      .speed-select:hover {
-        background: #c8d8e8;
+        min-width: 22px;
+        flex-shrink: 0;
       }
 
       /* PDF Link */
       .pdf-link {
         display: flex;
         align-items: center;
-        gap: 2px;
-        font-size: clamp(8px, 1vw, 12px);
+        gap: 1px;
+        font-size: 8px;
         font-weight: 600;
         color: #1a5a7a;
         background: #e8f0f8;
-        padding: 1px 8px 1px 5px;
+        padding: 1px 4px 1px 3px;
         border-radius: 20px;
         border: 1px solid #b0cce0;
         text-decoration: none;
         white-space: nowrap;
         transition: background 0.2s;
-        height: clamp(18px, 2.4vw, 26px);
+        height: 20px;
+        flex-shrink: 0;
       }
 
       .pdf-link:hover {
@@ -287,32 +290,32 @@
       }
 
       .pdf-link .icon {
-        font-size: clamp(9px, 1.2vw, 14px);
+        font-size: 9px;
       }
 
       .pdf-link .label {
         font-weight: 600;
-        font-size: clamp(7px, 0.8vw, 10px);
+        font-size: 7px;
       }
 
       /* ===== MAIN CONTENT ===== */
       h1 {
         text-align: center;
         font-weight: 900;
-        font-size: clamp(24px, 4vw, 40px);
+        font-size: 2.2em;
         margin-bottom: 10px;
         margin-top: 0;
       }
 
       .sentence {
         margin-bottom: 0.2em;
-        font-size: clamp(16px, 2.2vw, 22px);
+        font-size: 1em;
       }
 
       .sentence .translation {
         display: none;
         font-weight: 400;
-        font-size: clamp(12px, 1.5vw, 17px);
+        font-size: 0.8em;
         color: #444;
         line-height: 1.6;
         margin-top: -0.2em;
@@ -326,8 +329,7 @@
         background: #f5f9ff;
         border: 2px solid #2c6b9e;
         border-radius: 20px;
-        padding: clamp(12px, 2vw, 24px) clamp(16px, 2.5vw, 30px) clamp(16px,
-            2.5vw, 30px);
+        padding: 16px 20px 20px;
         margin: 40px 0 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
       }
@@ -343,21 +345,21 @@
       }
 
       .qa-block .section-header h2 {
-        font-size: clamp(18px, 2.8vw, 26px);
+        font-size: 1.4em;
         margin: 0;
         color: #1a3e5c;
       }
 
       .qa-block .section-header .en-header {
         font-weight: 400;
-        font-size: clamp(11px, 1.4vw, 16px);
+        font-size: 0.8em;
         color: #5a7a8a;
       }
 
       .qa-item {
-        margin: clamp(12px, 1.8vw, 20px) 0 clamp(8px, 1.2vw, 14px);
+        margin: 14px 0 10px;
         border-bottom: 1px solid #dde5ed;
-        padding-bottom: clamp(8px, 1.2vw, 14px);
+        padding-bottom: 10px;
       }
       .qa-item:last-child {
         border-bottom: 0;
@@ -367,7 +369,7 @@
       .question {
         font-weight: 700;
         color: #003366;
-        font-size: clamp(16px, 2.2vw, 22px);
+        font-size: 1em;
         margin-bottom: 0.1em;
         display: flex;
         align-items: center;
@@ -378,7 +380,7 @@
       .question .q-translation {
         display: none;
         font-weight: 400;
-        font-size: clamp(11px, 1.4vw, 16px);
+        font-size: 0.75em;
         color: #5a6a7a;
         margin-left: 8px;
       }
@@ -391,23 +393,23 @@
         font-weight: 400;
         color: #1f4b3c;
         background: #e8f0ee;
-        padding: clamp(4px, 0.6vw, 8px) clamp(10px, 1.4vw, 18px);
+        padding: 4px 12px;
         border-radius: 30px;
         display: inline-flex;
         align-items: center;
         flex-wrap: wrap;
         gap: 4px;
         margin-top: 4px;
-        font-size: clamp(14px, 1.8vw, 20px);
+        font-size: 0.9em;
         line-height: 1.5;
         border-left: 4px solid #2a6b4a;
-        padding-left: clamp(12px, 1.8vw, 22px);
+        padding-left: 16px;
       }
 
       .answer .translation {
         display: none;
         font-weight: 400;
-        font-size: clamp(11px, 1.4vw, 16px);
+        font-size: 0.8em;
         color: #444;
         line-height: 1.5;
         margin-top: 2px;
@@ -434,20 +436,19 @@
 
       .answer-toggle label {
         font-weight: 400;
-        font-size: clamp(12px, 1.4vw, 17px);
+        font-size: 0.85em;
         display: flex;
         align-items: center;
         gap: 6px;
         cursor: pointer;
         background: #eaeef3;
-        padding: clamp(2px, 0.4vw, 6px) clamp(10px, 1.4vw, 18px) clamp(2px,
-            0.4vw, 6px) clamp(8px, 1.2vw, 16px);
+        padding: 2px 12px 2px 10px;
         border-radius: 40px;
       }
 
       .answer-toggle input {
-        width: clamp(14px, 1.6vw, 20px);
-        height: clamp(14px, 1.6vw, 20px);
+        width: 16px;
+        height: 16px;
         accent-color: #1f5b3a;
         cursor: pointer;
       }
@@ -464,8 +465,7 @@
         background: #f0f4fa;
         border: 2px solid #b0b8c9;
         border-radius: 20px;
-        padding: clamp(12px, 2vw, 24px) clamp(16px, 2.5vw, 30px) clamp(16px,
-            2.5vw, 30px);
+        padding: 16px 20px 20px;
         margin: 30px 0 20px;
       }
 
@@ -480,14 +480,14 @@
       }
 
       .think-block .section-header h2 {
-        font-size: clamp(18px, 2.8vw, 26px);
+        font-size: 1.4em;
         margin: 0;
         color: #2c3e50;
       }
 
       .think-block .section-header .en-header {
         font-weight: 400;
-        font-size: clamp(11px, 1.4vw, 16px);
+        font-size: 0.8em;
         color: #5a7a8a;
       }
 
@@ -495,7 +495,7 @@
       .tts-section {
         display: flex;
         align-items: center;
-        gap: clamp(6px, 1vw, 14px);
+        gap: 8px;
         margin-bottom: 16px;
         flex-wrap: wrap;
       }
@@ -507,10 +507,9 @@
         background: #2c6b9e;
         color: white;
         border: none;
-        padding: clamp(4px, 0.6vw, 8px) clamp(10px, 1.6vw, 20px) clamp(4px,
-            0.6vw, 8px) clamp(8px, 1.2vw, 16px);
+        padding: 4px 14px 4px 10px;
         border-radius: 30px;
-        font-size: clamp(11px, 1.4vw, 16px);
+        font-size: 0.85em;
         font-weight: 600;
         cursor: pointer;
         transition: background 0.2s;
@@ -527,7 +526,7 @@
       }
 
       .tts-button .icon {
-        font-size: clamp(14px, 1.8vw, 20px);
+        font-size: 1.1em;
       }
 
       .tts-button.speaking {
@@ -546,7 +545,7 @@
       }
 
       .tts-status {
-        font-size: clamp(11px, 1.2vw, 15px);
+        font-size: 0.8em;
         font-weight: 400;
         color: #3a5a7a;
       }
@@ -560,7 +559,7 @@
       .speaker-btn {
         background: none;
         border: none;
-        font-size: clamp(13px, 1.6vw, 18px);
+        font-size: 1em;
         cursor: pointer;
         padding: 0 4px;
         color: #2c6b9e;
@@ -584,12 +583,12 @@
       }
 
       .question .speaker-btn {
-        font-size: clamp(12px, 1.5vw, 17px);
+        font-size: 0.95em;
         margin-left: 6px;
       }
 
       .answer .speaker-btn {
-        font-size: clamp(11px, 1.4vw, 16px);
+        font-size: 0.9em;
         margin-left: 6px;
         color: #2a6b4a;
       }
@@ -603,18 +602,18 @@
         margin-top: 50px;
         padding-top: 20px;
         border-top: 2px solid #dde5ed;
-        font-size: clamp(11px, 1.3vw, 15px);
+        font-size: 0.8em;
         font-weight: 400;
         color: #4a5a6a;
         line-height: 1.8;
         background: #f7f9fb;
-        padding: clamp(12px, 1.8vw, 22px) clamp(14px, 2vw, 28px);
+        padding: 16px 20px;
         border-radius: 12px;
       }
 
       .page-footer .footer-title {
         font-weight: 700;
-        font-size: clamp(12px, 1.4vw, 16px);
+        font-size: 0.9em;
         color: #1a3e5c;
         margin-bottom: 2px;
       }
@@ -631,7 +630,7 @@
       .page-footer .footer-item .sub {
         font-weight: 400;
         color: #5a6a7a;
-        font-size: clamp(10px, 1.1vw, 14px);
+        font-size: 0.9em;
         padding-left: 12px;
       }
 
@@ -643,31 +642,18 @@
       .page-footer .footer-item .people .note {
         font-weight: 400;
         color: #6a7a8a;
-        font-size: clamp(9px, 1vw, 13px);
+        font-size: 0.85em;
         padding-left: 12px;
       }
 
       /* ===== RESPONSIVE ===== */
       @media (max-width: 700px) {
-        .sticky-header {
-          gap: 2px 4px;
-          padding: 3px 2px 5px 2px;
-          justify-content: center;
-        }
-        .audio-wrap {
-          margin-left: 0;
-        }
         body {
           padding: 12px 14px;
         }
-      }
-
-      @media (max-width: 500px) {
         .sticky-header {
-          gap: 1px 3px;
-        }
-        .controls-group {
-          gap: 0px 3px;
+          gap: 1px 2px;
+          padding: 2px 2px 4px 2px;
         }
         .controls-group .control-item .en-label {
           display: none;
@@ -675,11 +661,100 @@
         .controls-group .sep {
           display: none;
         }
-        body {
-          padding: 8px 10px;
+        .header-title .en {
+          display: none;
+        }
+        .header-title .ja {
+          font-size: 13px;
         }
         .font-slider-wrap input[type="range"] {
-          width: clamp(40px, 12vw, 60px);
+          width: 30px;
+        }
+        .audio-wrap audio {
+          max-width: 40px;
+          min-width: 32px;
+        }
+        .audio-wrap .audio-label {
+          font-size: 8px;
+        }
+        .pdf-link .label {
+          display: none;
+        }
+        .pdf-link .icon {
+          font-size: 8px;
+        }
+        .pdf-link {
+          padding: 1px 3px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        body {
+          padding: 8px 10px;
+          font-size: 16px;
+        }
+        .sticky-header {
+          gap: 1px 2px;
+          padding: 2px 1px 3px 1px;
+          font-size: 9px;
+        }
+        .header-title .ja {
+          font-size: 12px;
+        }
+        .controls-group .control-item label {
+          font-size: 8px;
+        }
+        .controls-group .control-item label input[type="checkbox"] {
+          width: 10px;
+          height: 10px;
+        }
+        .font-slider-wrap input[type="range"] {
+          width: 24px;
+        }
+        .font-slider-wrap {
+          height: 18px;
+          padding: 0 2px;
+        }
+        .font-slider-wrap .slider-value {
+          font-size: 7px;
+          min-width: 12px;
+        }
+        .font-slider-wrap .slider-icon {
+          font-size: 8px;
+        }
+        .audio-wrap {
+          height: 18px;
+          padding: 0 2px;
+        }
+        .audio-wrap audio {
+          max-width: 32px;
+          min-width: 28px;
+          height: 14px;
+        }
+        .audio-wrap .audio-label {
+          font-size: 7px;
+        }
+        .speed-select {
+          font-size: 6px;
+          height: 13px;
+          min-width: 16px;
+        }
+        .pdf-link {
+          height: 16px;
+          padding: 0 2px;
+        }
+        .pdf-link .icon {
+          font-size: 7px;
+        }
+        .qa-block {
+          padding: 12px 14px 16px;
+        }
+        .think-block {
+          padding: 12px 14px 16px;
+        }
+        .page-footer {
+          padding: 12px 14px;
+          font-size: 0.7em;
         }
       }
 
@@ -706,10 +781,24 @@
       .show-translation .translation {
         display: block;
       }
+
+      /* Font size classes applied by JS */
+      .font-size-small {
+        font-size: 14px;
+      }
+      .font-size-medium {
+        font-size: 18px;
+      }
+      .font-size-large {
+        font-size: 22px;
+      }
+      .font-size-xlarge {
+        font-size: 26px;
+      }
     </style>
   </head>
   <body>
-    <!-- ===== STICKY HEADER - ULTRA COMPACT ===== -->
+    <!-- ===== STICKY HEADER - ONE LINE ===== -->
     <div class="sticky-header" id="stickyHeader">
       <div class="header-title">
         <span class="ja"
@@ -778,13 +867,13 @@
           <input
             type="range"
             id="fontSizeSlider"
-            min="14"
-            max="28"
-            value="19"
+            min="12"
+            max="26"
+            value="18"
             step="1"
             aria-label="Font size"
           />
-          <span class="slider-value" id="fontSizeDisplay">19</span>
+          <span class="slider-value" id="fontSizeDisplay">18</span>
         </div>
 
         <span class="sep">|</span>
@@ -796,11 +885,11 @@
           target="_blank"
         >
           <span class="icon">📄</span>
-          <span class="label">Original PDF</span>
+          <span class="label">PDF</span>
         </a>
       </div>
 
-      <!-- ===== AUDIO WRAP - SUPER COMPACT ===== -->
+      <!-- ===== AUDIO WRAP ===== -->
       <div class="audio-wrap">
         <span class="audio-label">🎧</span>
         <audio
@@ -826,6 +915,7 @@
     </div>
 
     <!-- ===== MAIN CONTENT ===== -->
+    <!-- ===== (same content as before - I'll include it below) ===== -->
     <h1>
       <ruby>魚<rt>さかな</rt></ruby
       >つり
@@ -1922,12 +2012,21 @@
 
         if (fontSizeSlider && fontSizeDisplay) {
           // Set initial value
-          fontSizeDisplay.textContent = fontSizeSlider.value;
+          const initialSize = fontSizeSlider.value;
+          document.body.style.fontSize = initialSize + "px";
+          fontSizeDisplay.textContent = initialSize;
 
           fontSizeSlider.addEventListener("input", function () {
             const size = this.value;
             document.body.style.fontSize = size + "px";
             fontSizeDisplay.textContent = size;
+
+            // Update all child elements that use em/rem units
+            document.querySelectorAll(
+              ".sentence, .question, .answer, .qa-item, .think-block, .qa-block"
+            ).forEach(function (el) {
+              // They use 'em' units so they scale automatically
+            });
           });
         }
 
@@ -2021,7 +2120,6 @@
 
         let isSpeaking = false;
         let currentIndex = 0;
-        let isPaused = false;
 
         function getItemText(item) {
           const questionEl = item.querySelector(".question");
@@ -2031,7 +2129,6 @@
           let answerText = "";
 
           if (questionEl) {
-            // Get text without the speaker button
             const clone = questionEl.cloneNode(true);
             const btn = clone.querySelector(".speaker-btn");
             if (btn) btn.remove();
@@ -2064,9 +2161,7 @@
           ttsButtonText.textContent = "⏹ Stop";
           ttsCounter.textContent = "0";
 
-          // Cancel any ongoing speech
           window.speechSynthesis.cancel();
-
           speakNextItem();
         }
 
@@ -2079,12 +2174,9 @@
           const item = qaItems[currentIndex];
           const texts = getItemText(item);
 
-          // Update counter
           ttsCounter.textContent = currentIndex + 1;
 
-          // Speak question
           speakText(texts.question, function () {
-            // After question, speak answer
             speakText(texts.answer, function () {
               currentIndex++;
               setTimeout(function () {
@@ -2110,7 +2202,6 @@
           ttsButton.classList.remove("speaking");
           ttsButtonText.textContent = "🔊 Read All Aloud";
           ttsCounter.textContent = "0";
-          // Remove speaking class from all speaker buttons
           document
             .querySelectorAll(".speaker-btn.speaking")
             .forEach(function (b) {
@@ -2118,43 +2209,27 @@
             });
         }
 
-        // Batch TTS Button click handler
         ttsButton.addEventListener("click", function () {
           if (isSpeaking) {
             stopSpeaking();
           } else {
-            // Reset and start fresh
             currentIndex = 0;
             ttsCounter.textContent = "0";
             window.speechSynthesis.cancel();
-
-            // Remove speaking class from all speaker buttons
             document
               .querySelectorAll(".speaker-btn.speaking")
               .forEach(function (b) {
                 b.classList.remove("speaking");
               });
-
             setTimeout(function () {
               speakAllItems();
             }, 100);
           }
         });
 
-        // Clean up on page unload
         window.addEventListener("beforeunload", function () {
           if (window.speechSynthesis) {
             window.speechSynthesis.cancel();
-          }
-        });
-
-        // Also cancel when clicking away from speaker buttons
-        document.addEventListener("click", function (e) {
-          if (
-            !e.target.closest(".speaker-btn") &&
-            !e.target.closest(".tts-button")
-          ) {
-            // Don't cancel if clicking on speaker buttons or TTS button
           }
         });
       })();
@@ -2162,7 +2237,6 @@
     <!-- ===== SERVICE WORKER REGISTRATION ===== -->
     <script>
       (function () {
-        // Register service worker
         if ("serviceWorker" in navigator) {
           window.addEventListener("load", function () {
             navigator.serviceWorker
