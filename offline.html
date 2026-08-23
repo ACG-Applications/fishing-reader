@@ -2,45 +2,288 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Offline - Graded Japanese Readers</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#dce8f5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Allow rotation on all devices -->
+    <meta name="screen-orientation" content="both" />
+    <meta name="apple-mobile-web-app-orientations" content="all" />
+    
     <style>
       * { box-sizing: border-box; }
       body {
         font-family: "Hiragino Sans", "Meiryo", sans-serif;
         max-width: 600px;
         margin: 60px auto;
-        padding: 30px;
-        background: #fafafa;
+        padding: 30px 20px;
+        background: #dce8f5;
         text-align: center;
         color: #1a3e5c;
         line-height: 1.8;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      .icon { font-size: 64px; margin-bottom: 20px; }
-      h1 { font-size: 24px; margin-bottom: 10px; }
-      p { color: #4a6a7a; font-weight: 400; }
+      
+      .offline-card {
+        background: #ffffff;
+        padding: 40px 30px 50px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        width: 100%;
+        border: 2px solid #b0c4d8;
+        transition: all 0.3s ease;
+      }
+      
+      .icon { 
+        font-size: 72px; 
+        margin-bottom: 16px;
+        display: block;
+      }
+      
+      h1 { 
+        font-size: 26px; 
+        margin-bottom: 8px;
+        color: #000000;
+        font-weight: 900;
+      }
+      
+      .subtitle {
+        color: #4a6a7a;
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      
+      .message {
+        color: #4a6a7a;
+        font-weight: 400;
+        font-size: 15px;
+        margin: 6px 0;
+      }
+      
+      .hint {
+        font-size: 14px;
+        color: #6a8a9a;
+        font-weight: 400;
+        margin: 12px 0 20px;
+        background: #f0f4f8;
+        padding: 10px 16px;
+        border-radius: 10px;
+        display: inline-block;
+      }
+      
       .btn {
         display: inline-block;
-        padding: 12px 30px;
+        padding: 14px 36px;
         background: #2c6b9e;
         color: white;
         border: none;
         border-radius: 30px;
-        font-size: 16px;
+        font-size: 17px;
+        font-weight: 600;
         cursor: pointer;
         text-decoration: none;
-        margin-top: 20px;
+        margin-top: 8px;
+        transition: all 0.2s ease;
+        font-family: inherit;
       }
-      .btn:hover { background: #1a4a7a; }
+      
+      .btn:hover { 
+        background: #1a4a7a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(44, 107, 158, 0.3);
+      }
+      
+      .btn:active {
+        transform: scale(0.97);
+      }
+      
+      /* ===== ROTATION & RESPONSIVE ===== */
+      
+      /* Landscape phones */
+      @media (max-width: 700px) and (orientation: landscape) {
+        body {
+          margin: 20px auto;
+          padding: 20px 16px;
+        }
+        
+        .offline-card {
+          padding: 24px 20px 32px;
+        }
+        
+        .icon { 
+          font-size: 48px;
+          margin-bottom: 10px;
+        }
+        
+        h1 { 
+          font-size: 20px;
+        }
+        
+        .subtitle {
+          font-size: 14px;
+        }
+        
+        .message {
+          font-size: 13px;
+        }
+        
+        .hint {
+          font-size: 12px;
+          padding: 6px 12px;
+        }
+        
+        .btn {
+          padding: 10px 28px;
+          font-size: 14px;
+        }
+      }
+      
+      /* Small landscape phones */
+      @media (max-width: 500px) and (orientation: landscape) {
+        body {
+          margin: 10px auto;
+          padding: 10px 12px;
+        }
+        
+        .offline-card {
+          padding: 16px 14px 20px;
+        }
+        
+        .icon { 
+          font-size: 36px;
+          margin-bottom: 6px;
+        }
+        
+        h1 { 
+          font-size: 17px;
+        }
+        
+        .subtitle {
+          font-size: 12px;
+        }
+        
+        .message {
+          font-size: 11px;
+        }
+        
+        .hint {
+          font-size: 10px;
+          padding: 4px 10px;
+          margin: 6px 0 12px;
+        }
+        
+        .btn {
+          padding: 8px 20px;
+          font-size: 12px;
+        }
+      }
+      
+      /* Tablet portrait */
+      @media (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
+        .offline-card {
+          padding: 50px 40px 60px;
+        }
+        
+        .icon { 
+          font-size: 80px;
+        }
+        
+        h1 { 
+          font-size: 30px;
+        }
+        
+        .btn {
+          padding: 16px 44px;
+          font-size: 19px;
+        }
+      }
+      
+      /* Tablet landscape */
+      @media (min-width: 701px) and (max-width: 1024px) and (orientation: landscape) {
+        body {
+          margin: 30px auto;
+          padding: 24px 30px;
+        }
+        
+        .offline-card {
+          padding: 32px 28px 40px;
+        }
+        
+        .icon { 
+          font-size: 56px;
+        }
+        
+        h1 { 
+          font-size: 22px;
+        }
+        
+        .btn {
+          padding: 12px 32px;
+          font-size: 15px;
+        }
+      }
+      
+      /* ===== DARK MODE ===== */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #1a1a2a;
+        }
+        
+        .offline-card {
+          background: #2a2a3a;
+          border-color: #3a3a4a;
+        }
+        
+        h1 {
+          color: #e0d8d0;
+        }
+        
+        .subtitle {
+          color: #9a9aaa;
+        }
+        
+        .message {
+          color: #9a9aaa;
+        }
+        
+        .hint {
+          background: #2a2a3a;
+          color: #8a8a9a;
+          border: 1px solid #3a3a4a;
+        }
+        
+        .btn {
+          background: #4a7a9a;
+        }
+        
+        .btn:hover {
+          background: #3a6a8a;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="icon">📚</div>
-    <h1>Offline Mode</h1>
-    <p>You are currently offline. Please check your internet connection.</p>
-    <p style="font-size:14px; color:#6a8a9a;">
-      Some content may already be cached and available.
-    </p>
-    <a href="." class="btn">Try Again</a>
+    <div class="offline-card">
+      <span class="icon">📚</span>
+      <h1>Offline Mode</h1>
+      <p class="subtitle">📡 オフラインモード</p>
+      <p class="message">You are currently offline. Please check your internet connection.</p>
+      <p class="message" style="font-size:0.9em;">
+        インターネット接続を確認してください。
+      </p>
+      <div class="hint">
+        💡 Some content may already be cached and available.<br>
+        <span style="font-size:0.85em;">一部のコンテンツは既にキャッシュされている場合があります。</span>
+      </div>
+      <a href="." class="btn">🔄 Try Again / 再試行</a>
+    </div>
   </body>
 </html>

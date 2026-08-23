@@ -1,29 +1,27 @@
 <!doctype html>
 <html lang="ja">
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="manifest.json" />
-
-  <!-- Icons -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="icon-192x192.png" />
-  <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
-
-  <!-- Theme color for mobile browsers -->
-  <meta name="theme-color" content="#dce8f5" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta
-    name="apple-mobile-web-app-status-bar-style"
-    content="black-translucent"
-  />
-
-  <!-- Meta tags for PWA -->
-  <meta
-    name="description"
-    content="Graded Japanese reading practice with audio and comprehension questions"
-  />
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Graded Japanese Readers</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#dce8f5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Allow rotation on all devices -->
+    <meta name="screen-orientation" content="both" />
+    <meta name="apple-mobile-web-app-orientations" content="all" />
+    
+    <!-- Icons -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Graded Japanese reading practice with audio and comprehension questions" />
+    
     <style>
       * {
         box-sizing: border-box;
@@ -40,6 +38,7 @@
         font-weight: 700;
         line-height: 2.2;
         font-size: 18px;
+        transition: font-size 0.1s ease;
       }
 
       /* ===== STICKY HEADER - LARGER ===== */
@@ -59,6 +58,7 @@
         font-size: 15px;
         min-height: 56px;
         border-radius: 0 0 10px 10px;
+        transition: all 0.2s ease;
       }
 
       .header-title {
@@ -74,6 +74,7 @@
         font-weight: 900;
         font-size: 20px;
         color: #000000;
+        transition: font-size 0.2s ease;
       }
 
       .header-title .ja ruby rt {
@@ -87,6 +88,7 @@
         color: #6a8a9a;
         letter-spacing: 0.3px;
         padding-left: 2px;
+        transition: font-size 0.2s ease;
       }
 
       .controls-group {
@@ -114,6 +116,7 @@
         color: #000000;
         white-space: nowrap;
         padding: 3px 6px;
+        transition: font-size 0.2s ease;
       }
 
       .controls-group .control-item label input[type="checkbox"] {
@@ -122,6 +125,7 @@
         accent-color: #8b1a1a;
         cursor: pointer;
         margin: 0;
+        transition: width 0.2s ease, height 0.2s ease;
       }
 
       .controls-group .control-item .en-label {
@@ -130,6 +134,7 @@
         color: #6a8a9a;
         margin-left: 1px;
         display: block;
+        transition: font-size 0.2s ease;
       }
 
       .controls-group .sep {
@@ -150,11 +155,13 @@
         border: 1px solid #b0cce0;
         height: 34px;
         flex-shrink: 0;
+        transition: all 0.2s ease;
       }
 
       .font-slider-wrap .slider-icon {
         font-size: 15px;
         line-height: 1;
+        transition: font-size 0.2s ease;
       }
 
       .font-slider-wrap input[type="range"] {
@@ -167,6 +174,7 @@
         outline: none;
         cursor: pointer;
         padding: 0;
+        transition: width 0.2s ease;
       }
 
       .font-slider-wrap input[type="range"]::-webkit-slider-thumb {
@@ -179,6 +187,7 @@
         cursor: pointer;
         border: 2px solid white;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        transition: width 0.2s ease, height 0.2s ease;
       }
 
       .font-slider-wrap input[type="range"]::-moz-range-thumb {
@@ -197,6 +206,7 @@
         color: #1a3e5c;
         min-width: 24px;
         text-align: center;
+        transition: font-size 0.2s ease;
       }
 
       /* ===== AUDIO WRAP ===== */
@@ -211,6 +221,7 @@
         height: 34px;
         flex-shrink: 0;
         margin-left: auto;
+        transition: all 0.2s ease;
       }
 
       .audio-wrap .audio-label {
@@ -218,6 +229,7 @@
         font-size: 15px;
         color: #003366;
         line-height: 1;
+        transition: font-size 0.2s ease;
       }
 
       .audio-wrap audio {
@@ -228,6 +240,7 @@
         border-radius: 30px;
         min-width: 65px;
         display: block;
+        transition: all 0.2s ease;
       }
 
       .audio-wrap audio::-webkit-media-controls-panel {
@@ -266,6 +279,7 @@
         outline: none;
         min-width: 36px;
         flex-shrink: 0;
+        transition: all 0.2s ease;
       }
 
       /* PDF Link */
@@ -282,7 +296,7 @@
         border: 1px solid #b0cce0;
         text-decoration: none;
         white-space: nowrap;
-        transition: background 0.2s;
+        transition: all 0.2s ease;
         height: 30px;
         flex-shrink: 0;
       }
@@ -293,11 +307,13 @@
 
       .pdf-link .icon {
         font-size: 14px;
+        transition: font-size 0.2s ease;
       }
 
       .pdf-link .label {
         font-weight: 600;
         font-size: 11px;
+        transition: font-size 0.2s ease;
       }
 
       /* ===== MAIN CONTENT ===== */
@@ -312,6 +328,7 @@
         padding: 12px;
         border-radius: 12px;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        transition: all 0.2s ease;
       }
 
       h1 ruby rt {
@@ -325,7 +342,7 @@
         padding: 8px 16px;
         border-radius: 10px;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-        transition: box-shadow 0.2s;
+        transition: all 0.2s ease;
       }
 
       .sentence:hover {
@@ -379,6 +396,7 @@
         padding: 16px 20px 20px;
         margin: 40px 0 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+        transition: all 0.2s ease;
       }
 
       .qa-block .section-header {
@@ -395,6 +413,7 @@
         font-size: 1.4em;
         margin: 0;
         color: #000000;
+        transition: font-size 0.2s ease;
       }
 
       .qa-block .section-header h2 ruby rt {
@@ -405,6 +424,7 @@
         font-weight: 400;
         font-size: 0.8em;
         color: #5a7a8a;
+        transition: font-size 0.2s ease;
       }
 
       .qa-item {
@@ -428,6 +448,7 @@
         gap: 2px;
         background: transparent;
         padding: 0;
+        transition: font-size 0.2s ease;
       }
 
       .question .q-translation {
@@ -457,6 +478,7 @@
         line-height: 1.5;
         border-left: 4px solid #2a6b4a;
         padding-left: 16px;
+        transition: all 0.2s ease;
       }
 
       .answer .translation {
@@ -497,6 +519,7 @@
         background: #eaeef3;
         padding: 2px 12px 2px 10px;
         border-radius: 40px;
+        transition: font-size 0.2s ease;
       }
 
       .answer-toggle input {
@@ -504,6 +527,7 @@
         height: 16px;
         accent-color: #1f5b3a;
         cursor: pointer;
+        transition: width 0.2s ease, height 0.2s ease;
       }
 
       .qa-answer-hidden .answer {
@@ -521,6 +545,7 @@
         padding: 16px 20px 20px;
         margin: 30px 0 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+        transition: all 0.2s ease;
       }
 
       .think-block .section-header {
@@ -537,6 +562,7 @@
         font-size: 1.4em;
         margin: 0;
         color: #000000;
+        transition: font-size 0.2s ease;
       }
 
       .think-block .section-header h2 ruby rt {
@@ -547,6 +573,7 @@
         font-weight: 400;
         font-size: 0.8em;
         color: #5a7a8a;
+        transition: font-size 0.2s ease;
       }
 
       /* ===== TTS SECTION ===== */
@@ -570,7 +597,7 @@
         font-size: 0.9em;
         font-weight: 600;
         cursor: pointer;
-        transition: background 0.2s;
+        transition: all 0.2s ease;
         font-family: inherit;
         line-height: 1.4;
         min-height: 40px;
@@ -586,6 +613,7 @@
 
       .tts-button .icon {
         font-size: 1.1em;
+        transition: font-size 0.2s ease;
       }
 
       .tts-button.speaking {
@@ -607,6 +635,7 @@
         font-size: 0.8em;
         font-weight: 400;
         color: #3a5a7a;
+        transition: font-size 0.2s ease;
       }
 
       .tts-status .highlight {
@@ -621,9 +650,7 @@
         cursor: pointer;
         padding: 0 4px;
         color: #2c6b9e;
-        transition:
-          color 0.2s,
-          transform 0.1s;
+        transition: all 0.2s ease;
         vertical-align: middle;
         line-height: 1;
       }
@@ -670,6 +697,7 @@
         padding: 16px 20px;
         border-radius: 12px;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        transition: all 0.2s ease;
       }
 
       .page-footer .footer-title {
@@ -677,6 +705,7 @@
         font-size: 0.9em;
         color: #000000;
         margin-bottom: 2px;
+        transition: font-size 0.2s ease;
       }
 
       .page-footer .footer-title ruby rt {
@@ -697,6 +726,7 @@
         color: #5a6a7a;
         font-size: 0.9em;
         padding-left: 12px;
+        transition: font-size 0.2s ease;
       }
 
       .page-footer .footer-item .people {
@@ -709,9 +739,476 @@
         color: #6a7a8a;
         font-size: 0.85em;
         padding-left: 12px;
+        transition: font-size 0.2s ease;
       }
 
-      /* ===== RESPONSIVE ===== */
+      /* ===== ROTATION & LANDSCAPE SUPPORT ===== */
+      
+      /* Landscape mode for phones */
+      @media (max-width: 700px) and (orientation: landscape) {
+        body {
+          padding: 8px 12px;
+          font-size: 16px;
+        }
+        
+        .sticky-header {
+          gap: 3px 6px;
+          padding: 6px 8px;
+          font-size: 12px;
+          min-height: 40px;
+          border-radius: 0 0 8px 8px;
+        }
+        
+        .header-title .ja {
+          font-size: 16px;
+        }
+        
+        .header-title .en {
+          font-size: 9px;
+        }
+        
+        .controls-group .control-item label {
+          font-size: 11px;
+          padding: 2px 4px;
+        }
+        
+        .controls-group .control-item label input[type="checkbox"] {
+          width: 14px;
+          height: 14px;
+        }
+        
+        .controls-group .control-item .en-label {
+          display: none;
+        }
+        
+        .controls-group .sep {
+          display: none;
+        }
+        
+        .font-slider-wrap {
+          height: 26px;
+          padding: 2px 6px;
+        }
+        
+        .font-slider-wrap input[type="range"] {
+          width: 45px;
+        }
+        
+        .font-slider-wrap .slider-value {
+          font-size: 10px;
+          min-width: 18px;
+        }
+        
+        .font-slider-wrap .slider-icon {
+          font-size: 11px;
+        }
+        
+        .audio-wrap {
+          height: 26px;
+          padding: 2px 6px;
+        }
+        
+        .audio-wrap audio {
+          max-width: 55px;
+          min-width: 45px;
+          height: 18px;
+        }
+        
+        .audio-wrap .audio-label {
+          font-size: 11px;
+        }
+        
+        .speed-select {
+          font-size: 9px;
+          height: 18px;
+          min-width: 28px;
+        }
+        
+        .pdf-link {
+          height: 22px;
+          font-size: 10px;
+          padding: 1px 6px 1px 4px;
+        }
+        
+        .pdf-link .icon {
+          font-size: 10px;
+        }
+        
+        .pdf-link .label {
+          font-size: 9px;
+        }
+        
+        h1 {
+          font-size: 1.6em;
+          padding: 8px;
+        }
+        
+        .sentence {
+          padding: 4px 10px;
+          font-size: 0.95em;
+        }
+        
+        .qa-block {
+          padding: 10px 12px 14px;
+        }
+        
+        .qa-block .section-header h2 {
+          font-size: 1.1em;
+        }
+        
+        .qa-block .section-header .en-header {
+          font-size: 0.7em;
+        }
+        
+        .think-block {
+          padding: 10px 12px 14px;
+        }
+        
+        .think-block .section-header h2 {
+          font-size: 1.1em;
+        }
+        
+        .think-block .section-header .en-header {
+          font-size: 0.7em;
+        }
+        
+        .tts-button {
+          min-height: 30px;
+          font-size: 0.75em;
+          padding: 3px 10px 3px 8px;
+        }
+        
+        .tts-button .icon {
+          font-size: 0.9em;
+        }
+        
+        .tts-status {
+          font-size: 0.7em;
+        }
+        
+        .question {
+          font-size: 0.9em;
+        }
+        
+        .answer {
+          font-size: 0.8em;
+          padding: 2px 8px;
+          padding-left: 10px;
+        }
+        
+        .answer .translation {
+          font-size: 0.75em;
+        }
+        
+        .question .q-translation {
+          font-size: 0.7em;
+        }
+        
+        .speaker-btn {
+          font-size: 0.85em;
+        }
+        
+        .answer-toggle label {
+          font-size: 0.75em;
+        }
+        
+        .answer-toggle input {
+          width: 14px;
+          height: 14px;
+        }
+        
+        .page-footer {
+          padding: 10px 12px;
+          font-size: 0.7em;
+        }
+        
+        .page-footer .footer-title {
+          font-size: 0.8em;
+        }
+        
+        .page-footer .footer-item .sub {
+          font-size: 0.8em;
+        }
+        
+        .page-footer .footer-item .people .note {
+          font-size: 0.75em;
+        }
+      }
+      
+      /* Extra small landscape phones */
+      @media (max-width: 500px) and (orientation: landscape) {
+        body {
+          padding: 6px 8px;
+          font-size: 14px;
+        }
+        
+        .sticky-header {
+          gap: 2px 4px;
+          padding: 4px 6px;
+          font-size: 10px;
+          min-height: 34px;
+        }
+        
+        .header-title .ja {
+          font-size: 14px;
+        }
+        
+        .header-title .en {
+          font-size: 8px;
+        }
+        
+        .controls-group .control-item label {
+          font-size: 9px;
+          padding: 1px 3px;
+        }
+        
+        .controls-group .control-item label input[type="checkbox"] {
+          width: 12px;
+          height: 12px;
+        }
+        
+        .font-slider-wrap {
+          height: 22px;
+          padding: 1px 4px;
+        }
+        
+        .font-slider-wrap input[type="range"] {
+          width: 35px;
+        }
+        
+        .font-slider-wrap .slider-value {
+          font-size: 9px;
+          min-width: 16px;
+        }
+        
+        .font-slider-wrap .slider-icon {
+          font-size: 10px;
+        }
+        
+        .audio-wrap {
+          height: 22px;
+          padding: 1px 4px;
+        }
+        
+        .audio-wrap audio {
+          max-width: 40px;
+          min-width: 35px;
+          height: 16px;
+        }
+        
+        .audio-wrap .audio-label {
+          font-size: 10px;
+        }
+        
+        .speed-select {
+          font-size: 8px;
+          height: 16px;
+          min-width: 24px;
+        }
+        
+        .pdf-link {
+          height: 20px;
+          font-size: 9px;
+          padding: 1px 4px 1px 3px;
+        }
+        
+        .pdf-link .icon {
+          font-size: 9px;
+        }
+        
+        .pdf-link .label {
+          font-size: 8px;
+        }
+        
+        h1 {
+          font-size: 1.3em;
+          padding: 6px;
+        }
+        
+        .sentence {
+          padding: 3px 8px;
+          font-size: 0.9em;
+        }
+        
+        .qa-block {
+          padding: 8px 10px 12px;
+        }
+        
+        .qa-block .section-header h2 {
+          font-size: 1em;
+        }
+        
+        .think-block {
+          padding: 8px 10px 12px;
+        }
+        
+        .think-block .section-header h2 {
+          font-size: 1em;
+        }
+        
+        .tts-button {
+          min-height: 26px;
+          font-size: 0.7em;
+          padding: 2px 8px 2px 6px;
+        }
+        
+        .tts-button .icon {
+          font-size: 0.8em;
+        }
+        
+        .tts-status {
+          font-size: 0.65em;
+        }
+        
+        .question {
+          font-size: 0.85em;
+        }
+        
+        .answer {
+          font-size: 0.75em;
+          padding: 2px 6px;
+          padding-left: 8px;
+        }
+        
+        .speaker-btn {
+          font-size: 0.8em;
+        }
+        
+        .answer-toggle label {
+          font-size: 0.7em;
+        }
+        
+        .answer-toggle input {
+          width: 12px;
+          height: 12px;
+        }
+        
+        .page-footer {
+          padding: 8px 10px;
+          font-size: 0.65em;
+        }
+        
+        .page-footer .footer-title {
+          font-size: 0.75em;
+        }
+      }
+      
+      /* Tablet landscape */
+      @media (min-width: 701px) and (max-width: 1024px) and (orientation: landscape) {
+        body {
+          padding: 16px 24px;
+          font-size: 18px;
+        }
+        
+        .sticky-header {
+          padding: 10px 16px;
+          gap: 8px 12px;
+        }
+        
+        .header-title .ja {
+          font-size: 20px;
+        }
+        
+        .header-title .en {
+          font-size: 12px;
+        }
+        
+        .controls-group .control-item label {
+          font-size: 14px;
+        }
+        
+        .controls-group .control-item label input[type="checkbox"] {
+          width: 18px;
+          height: 18px;
+        }
+        
+        .controls-group .control-item .en-label {
+          display: inline;
+        }
+        
+        .controls-group .sep {
+          display: inline;
+        }
+        
+        .font-slider-wrap {
+          height: 36px;
+        }
+        
+        .font-slider-wrap input[type="range"] {
+          width: 80px;
+        }
+        
+        .audio-wrap {
+          height: 36px;
+        }
+        
+        .audio-wrap audio {
+          max-width: 120px;
+          min-width: 80px;
+        }
+        
+        h1 {
+          font-size: 2.4em;
+          padding: 14px;
+        }
+        
+        .sentence {
+          padding: 10px 18px;
+        }
+        
+        .qa-block {
+          padding: 18px 24px 24px;
+        }
+        
+        .think-block {
+          padding: 18px 24px 24px;
+        }
+        
+        .tts-button {
+          min-height: 44px;
+          font-size: 1em;
+        }
+        
+        .page-footer {
+          padding: 18px 24px;
+        }
+      }
+      
+      /* Tablet portrait - optimized */
+      @media (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
+        body {
+          padding: 20px 24px;
+          font-size: 19px;
+        }
+        
+        .sentence {
+          padding: 10px 18px;
+        }
+        
+        h1 {
+          font-size: 2.4em;
+          padding: 16px;
+        }
+        
+        .qa-block {
+          padding: 20px 24px 24px;
+        }
+        
+        .think-block {
+          padding: 20px 24px 24px;
+        }
+        
+        .tts-button {
+          min-height: 48px;
+          font-size: 1em;
+        }
+        
+        .page-footer {
+          padding: 20px 24px;
+        }
+      }
+
+      /* ===== RESPONSIVE (Portrait - Original) ===== */
       @media (max-width: 700px) {
         body {
           padding: 12px 12px;
@@ -1380,7 +1877,7 @@
         </button>
         <span class="tts-status" id="ttsStatus"
           ><span class="highlight" id="ttsCounter">0</span> of
-          <span id="ttsTotal">18</span></span
+          <span id="ttsTotal">16</span></span
         >
       </div>
 
@@ -1398,6 +1895,7 @@
         >
       </div>
 
+      <!-- All the QA items remain the same -->
       <!-- 問1 -->
       <div class="qa-item">
         <div class="question">
@@ -2295,8 +2793,37 @@
             window.speechSynthesis.cancel();
           }
         });
+
+        // ===== ROTATION HANDLER =====
+        function handleOrientationChange() {
+          const isLandscape = window.innerWidth > window.innerHeight;
+          const body = document.body;
+          
+          // Add orientation class for potential future use
+          if (isLandscape) {
+            body.setAttribute('data-orientation', 'landscape');
+          } else {
+            body.setAttribute('data-orientation', 'portrait');
+          }
+        }
+
+        // Listen for orientation changes
+        window.addEventListener('orientationchange', function() {
+          setTimeout(handleOrientationChange, 300);
+        });
+
+        window.addEventListener('resize', handleOrientationChange);
+
+        // Initial check
+        document.addEventListener('DOMContentLoaded', function() {
+          handleOrientationChange();
+        });
+
+        // Also call after a small delay
+        setTimeout(handleOrientationChange, 500);
       })();
     </script>
+    
     <!-- ===== SERVICE WORKER REGISTRATION ===== -->
     <script>
       (function () {
