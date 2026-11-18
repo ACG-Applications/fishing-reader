@@ -50,15 +50,6 @@
       "type": "image/x-icon"
     }
   ],
-  "screenshots": [
-    {
-      "src": "Fishing.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "platform": "wide",
-      "label": "Graded Japanese Reader - Fishing in Malaysia"
-    }
-  ],
   "categories": ["education", "books", "reference"],
   "lang": "ja",
   "dir": "ltr"

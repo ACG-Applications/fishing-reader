@@ -2,26 +2,35 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Graded Japanese Readers</title>
-    
+
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#dce8f5" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <!-- Allow rotation on all devices -->
     <meta name="screen-orientation" content="both" />
     <meta name="apple-mobile-web-app-orientations" content="all" />
-    
+
     <!-- Icons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="icon-192x192.png" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
-    
+
     <!-- Meta tags -->
-    <meta name="description" content="Graded Japanese reading practice with audio and comprehension questions" />
-    
+    <meta
+      name="description"
+      content="Graded Japanese reading practice with audio and comprehension questions"
+    />
+
     <style>
       * {
         box-sizing: border-box;
@@ -125,7 +134,9 @@
         accent-color: #8b1a1a;
         cursor: pointer;
         margin: 0;
-        transition: width 0.2s ease, height 0.2s ease;
+        transition:
+          width 0.2s ease,
+          height 0.2s ease;
       }
 
       .controls-group .control-item .en-label {
@@ -187,7 +198,9 @@
         cursor: pointer;
         border: 2px solid white;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-        transition: width 0.2s ease, height 0.2s ease;
+        transition:
+          width 0.2s ease,
+          height 0.2s ease;
       }
 
       .font-slider-wrap input[type="range"]::-moz-range-thumb {
@@ -527,14 +540,9 @@
         height: 16px;
         accent-color: #1f5b3a;
         cursor: pointer;
-        transition: width 0.2s ease, height 0.2s ease;
-      }
-
-      .qa-answer-hidden .answer {
-        display: none;
-      }
-      .qa-answer-visible .answer {
-        display: inline-flex;
+        transition:
+          width 0.2s ease,
+          height 0.2s ease;
       }
 
       /* ===== THINK BLOCK ===== */
@@ -743,14 +751,14 @@
       }
 
       /* ===== ROTATION & LANDSCAPE SUPPORT ===== */
-      
+
       /* Landscape mode for phones */
       @media (max-width: 700px) and (orientation: landscape) {
         body {
           padding: 8px 12px;
           font-size: 16px;
         }
-        
+
         .sticky-header {
           gap: 3px 6px;
           padding: 6px 8px;
@@ -758,451 +766,451 @@
           min-height: 40px;
           border-radius: 0 0 8px 8px;
         }
-        
+
         .header-title .ja {
           font-size: 16px;
         }
-        
+
         .header-title .en {
           font-size: 9px;
         }
-        
+
         .controls-group .control-item label {
           font-size: 11px;
           padding: 2px 4px;
         }
-        
+
         .controls-group .control-item label input[type="checkbox"] {
           width: 14px;
           height: 14px;
         }
-        
+
         .controls-group .control-item .en-label {
           display: none;
         }
-        
+
         .controls-group .sep {
           display: none;
         }
-        
+
         .font-slider-wrap {
           height: 26px;
           padding: 2px 6px;
         }
-        
+
         .font-slider-wrap input[type="range"] {
           width: 45px;
         }
-        
+
         .font-slider-wrap .slider-value {
           font-size: 10px;
           min-width: 18px;
         }
-        
+
         .font-slider-wrap .slider-icon {
           font-size: 11px;
         }
-        
+
         .audio-wrap {
           height: 26px;
           padding: 2px 6px;
         }
-        
+
         .audio-wrap audio {
           max-width: 55px;
           min-width: 45px;
           height: 18px;
         }
-        
+
         .audio-wrap .audio-label {
           font-size: 11px;
         }
-        
+
         .speed-select {
           font-size: 9px;
           height: 18px;
           min-width: 28px;
         }
-        
+
         .pdf-link {
           height: 22px;
           font-size: 10px;
           padding: 1px 6px 1px 4px;
         }
-        
+
         .pdf-link .icon {
           font-size: 10px;
         }
-        
+
         .pdf-link .label {
           font-size: 9px;
         }
-        
+
         h1 {
           font-size: 1.6em;
           padding: 8px;
         }
-        
+
         .sentence {
           padding: 4px 10px;
           font-size: 0.95em;
         }
-        
+
         .qa-block {
           padding: 10px 12px 14px;
         }
-        
+
         .qa-block .section-header h2 {
           font-size: 1.1em;
         }
-        
+
         .qa-block .section-header .en-header {
           font-size: 0.7em;
         }
-        
+
         .think-block {
           padding: 10px 12px 14px;
         }
-        
+
         .think-block .section-header h2 {
           font-size: 1.1em;
         }
-        
+
         .think-block .section-header .en-header {
           font-size: 0.7em;
         }
-        
+
         .tts-button {
           min-height: 30px;
           font-size: 0.75em;
           padding: 3px 10px 3px 8px;
         }
-        
+
         .tts-button .icon {
           font-size: 0.9em;
         }
-        
+
         .tts-status {
           font-size: 0.7em;
         }
-        
+
         .question {
           font-size: 0.9em;
         }
-        
+
         .answer {
           font-size: 0.8em;
           padding: 2px 8px;
           padding-left: 10px;
         }
-        
+
         .answer .translation {
           font-size: 0.75em;
         }
-        
+
         .question .q-translation {
           font-size: 0.7em;
         }
-        
+
         .speaker-btn {
           font-size: 0.85em;
         }
-        
+
         .answer-toggle label {
           font-size: 0.75em;
         }
-        
+
         .answer-toggle input {
           width: 14px;
           height: 14px;
         }
-        
+
         .page-footer {
           padding: 10px 12px;
           font-size: 0.7em;
         }
-        
+
         .page-footer .footer-title {
           font-size: 0.8em;
         }
-        
+
         .page-footer .footer-item .sub {
           font-size: 0.8em;
         }
-        
+
         .page-footer .footer-item .people .note {
           font-size: 0.75em;
         }
       }
-      
+
       /* Extra small landscape phones */
       @media (max-width: 500px) and (orientation: landscape) {
         body {
           padding: 6px 8px;
           font-size: 14px;
         }
-        
+
         .sticky-header {
           gap: 2px 4px;
           padding: 4px 6px;
           font-size: 10px;
           min-height: 34px;
         }
-        
+
         .header-title .ja {
           font-size: 14px;
         }
-        
+
         .header-title .en {
           font-size: 8px;
         }
-        
+
         .controls-group .control-item label {
           font-size: 9px;
           padding: 1px 3px;
         }
-        
+
         .controls-group .control-item label input[type="checkbox"] {
           width: 12px;
           height: 12px;
         }
-        
+
         .font-slider-wrap {
           height: 22px;
           padding: 1px 4px;
         }
-        
+
         .font-slider-wrap input[type="range"] {
           width: 35px;
         }
-        
+
         .font-slider-wrap .slider-value {
           font-size: 9px;
           min-width: 16px;
         }
-        
+
         .font-slider-wrap .slider-icon {
           font-size: 10px;
         }
-        
+
         .audio-wrap {
           height: 22px;
           padding: 1px 4px;
         }
-        
+
         .audio-wrap audio {
           max-width: 40px;
           min-width: 35px;
           height: 16px;
         }
-        
+
         .audio-wrap .audio-label {
           font-size: 10px;
         }
-        
+
         .speed-select {
           font-size: 8px;
           height: 16px;
           min-width: 24px;
         }
-        
+
         .pdf-link {
           height: 20px;
           font-size: 9px;
           padding: 1px 4px 1px 3px;
         }
-        
+
         .pdf-link .icon {
           font-size: 9px;
         }
-        
+
         .pdf-link .label {
           font-size: 8px;
         }
-        
+
         h1 {
           font-size: 1.3em;
           padding: 6px;
         }
-        
+
         .sentence {
           padding: 3px 8px;
           font-size: 0.9em;
         }
-        
+
         .qa-block {
           padding: 8px 10px 12px;
         }
-        
+
         .qa-block .section-header h2 {
           font-size: 1em;
         }
-        
+
         .think-block {
           padding: 8px 10px 12px;
         }
-        
+
         .think-block .section-header h2 {
           font-size: 1em;
         }
-        
+
         .tts-button {
           min-height: 26px;
           font-size: 0.7em;
           padding: 2px 8px 2px 6px;
         }
-        
+
         .tts-button .icon {
           font-size: 0.8em;
         }
-        
+
         .tts-status {
           font-size: 0.65em;
         }
-        
+
         .question {
           font-size: 0.85em;
         }
-        
+
         .answer {
           font-size: 0.75em;
           padding: 2px 6px;
           padding-left: 8px;
         }
-        
+
         .speaker-btn {
           font-size: 0.8em;
         }
-        
+
         .answer-toggle label {
           font-size: 0.7em;
         }
-        
+
         .answer-toggle input {
           width: 12px;
           height: 12px;
         }
-        
+
         .page-footer {
           padding: 8px 10px;
           font-size: 0.65em;
         }
-        
+
         .page-footer .footer-title {
           font-size: 0.75em;
         }
       }
-      
+
       /* Tablet landscape */
       @media (min-width: 701px) and (max-width: 1024px) and (orientation: landscape) {
         body {
           padding: 16px 24px;
           font-size: 18px;
         }
-        
+
         .sticky-header {
           padding: 10px 16px;
           gap: 8px 12px;
         }
-        
+
         .header-title .ja {
           font-size: 20px;
         }
-        
+
         .header-title .en {
           font-size: 12px;
         }
-        
+
         .controls-group .control-item label {
           font-size: 14px;
         }
-        
+
         .controls-group .control-item label input[type="checkbox"] {
           width: 18px;
           height: 18px;
         }
-        
+
         .controls-group .control-item .en-label {
           display: inline;
         }
-        
+
         .controls-group .sep {
           display: inline;
         }
-        
+
         .font-slider-wrap {
           height: 36px;
         }
-        
+
         .font-slider-wrap input[type="range"] {
           width: 80px;
         }
-        
+
         .audio-wrap {
           height: 36px;
         }
-        
+
         .audio-wrap audio {
           max-width: 120px;
           min-width: 80px;
         }
-        
+
         h1 {
           font-size: 2.4em;
           padding: 14px;
         }
-        
+
         .sentence {
           padding: 10px 18px;
         }
-        
+
         .qa-block {
           padding: 18px 24px 24px;
         }
-        
+
         .think-block {
           padding: 18px 24px 24px;
         }
-        
+
         .tts-button {
           min-height: 44px;
           font-size: 1em;
         }
-        
+
         .page-footer {
           padding: 18px 24px;
         }
       }
-      
+
       /* Tablet portrait - optimized */
       @media (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
         body {
           padding: 20px 24px;
           font-size: 19px;
         }
-        
+
         .sentence {
           padding: 10px 18px;
         }
-        
+
         h1 {
           font-size: 2.4em;
           padding: 16px;
         }
-        
+
         .qa-block {
           padding: 20px 24px 24px;
         }
-        
+
         .think-block {
           padding: 20px 24px 24px;
         }
-        
+
         .tts-button {
           min-height: 48px;
           font-size: 1em;
         }
-        
+
         .page-footer {
           padding: 20px 24px;
         }
@@ -1392,6 +1400,359 @@
         }
       }
 
+      /* ===== PER-QUESTION ANSWER TOGGLE ===== */
+      .q-answer-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        background: #eef4f9;
+        border: 1px solid #b0cce0;
+        border-radius: 999px;
+        font-family: inherit;
+        font-size: 0.75em;
+        font-weight: 600;
+        color: #1a4a6a;
+        padding: 3px 11px;
+        margin-left: 8px;
+        cursor: pointer;
+        line-height: 1.5;
+        vertical-align: middle;
+        white-space: nowrap;
+        min-height: 30px;
+        transition: all 0.2s ease;
+      }
+      .q-answer-toggle-btn ruby rt {
+        font-size: 0.5em;
+        color: #8b1a1a;
+        font-weight: 400;
+      }
+      .q-answer-toggle-btn:hover {
+        background: #dcecf8;
+      }
+      .q-answer-toggle-btn:focus-visible {
+        outline: 2px solid #2c6b9e;
+        outline-offset: 2px;
+      }
+      .q-answer-toggle-btn[aria-expanded="true"] {
+        background: #2c6b9e;
+        border-color: #2c6b9e;
+        color: #ffffff;
+      }
+      .q-answer-toggle-btn[aria-expanded="true"] ruby rt {
+        color: #ffd9d9;
+      }
+
+      /* Answers stay hidden until revealed per question (or via "show all") */
+      .qa-item .answer {
+        display: none;
+      }
+      .qa-item.answer-shown .answer {
+        display: inline-flex;
+      }
+
+      /* ===== VOCABULARY TABLE ===== */
+      .vocab-block {
+        background: #ffffff;
+        border: 2px solid #2c6b9e;
+        border-radius: 20px;
+        padding: 16px 20px 20px;
+        margin: 30px 0 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+      }
+      .vocab-block .section-header {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        flex-wrap: wrap;
+        border-bottom: 2px dashed #9bb7d4;
+        padding-bottom: 6px;
+        margin-bottom: 10px;
+      }
+      .vocab-block .section-header h2 {
+        font-size: 1.4em;
+        margin: 0;
+        color: #000000;
+      }
+      .vocab-block .section-header h2 ruby rt {
+        color: #8b1a1a;
+      }
+      .vocab-block .section-header .en-header {
+        font-weight: 400;
+        font-size: 0.8em;
+        color: #5a7a8a;
+      }
+      .vocab-hint {
+        margin: -4px 0 10px;
+        font-weight: 400;
+        font-size: 0.78em;
+        line-height: 1.5;
+        color: #5a7a8a;
+      }
+
+      .vocab-table-wrap {
+        overflow-x: auto;
+      }
+
+      table.vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95em;
+        line-height: 1.8;
+      }
+      table.vocab-table th {
+        background: #e8f0f8;
+        color: #1a3e5c;
+        font-weight: 700;
+        padding: 8px 10px;
+        text-align: left;
+        border-bottom: 2px solid #b0cce0;
+        white-space: nowrap;
+      }
+      table.vocab-table td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #dde5ed;
+        vertical-align: top;
+      }
+      table.vocab-table tr:hover td {
+        background: #f5f9fc;
+      }
+      table.vocab-table td.kanji-cell {
+        font-size: 1.4em;
+        font-weight: 900;
+        color: #1a3e5c;
+        white-space: nowrap;
+        text-align: center;
+        width: 80px;
+      }
+      table.vocab-table td.kana-cell {
+        color: #8b1a1a;
+        font-weight: 600;
+        white-space: nowrap;
+        width: 92px;
+      }
+      table.vocab-table td.ex-cell {
+        font-weight: 400;
+      }
+      table.vocab-table td.ex-cell ruby rt {
+        color: #8b1a1a;
+        font-weight: 400;
+      }
+      body.no-furigana table.vocab-table td.ex-cell rt,
+      body.no-furigana table.vocab-table td.kanji-cell rt {
+        display: none;
+      }
+      .vocab-en {
+        display: none;
+        margin-top: 4px;
+        padding-left: 10px;
+        border-left: 2px solid #4a7aaa;
+        font-weight: 400;
+        font-size: 0.85em;
+        line-height: 1.5;
+        color: #1a3a7a;
+      }
+      .show-translation .vocab-en {
+        display: block;
+      }
+      .vocab-speaker {
+        margin-left: 6px;
+        padding: 2px 6px;
+        min-height: 28px;
+        font-size: 1em;
+        color: #2c6b9e;
+        vertical-align: middle;
+      }
+
+      /* Landscape */
+      @media (max-width: 700px) and (orientation: landscape) {
+        .vocab-block {
+          padding: 10px 12px 14px;
+        }
+        .vocab-block .section-header h2 {
+          font-size: 1.1em;
+        }
+        table.vocab-table {
+          font-size: 0.8em;
+        }
+        table.vocab-table td.kanji-cell {
+          font-size: 1.1em;
+          width: 50px;
+        }
+        .q-answer-toggle-btn {
+          font-size: 0.65em;
+          padding: 2px 8px;
+          min-height: 26px;
+        }
+      }
+      @media (max-width: 500px) {
+        .vocab-block {
+          padding: 10px 12px 14px;
+        }
+        table.vocab-table {
+          font-size: 0.85em;
+        }
+        table.vocab-table th,
+        table.vocab-table td {
+          padding: 5px 6px;
+        }
+        table.vocab-table td.kanji-cell {
+          font-size: 1.2em;
+          width: 46px;
+        }
+        table.vocab-table td.kana-cell {
+          width: 70px;
+        }
+        .q-answer-toggle-btn {
+          font-size: 0.7em;
+          padding: 2px 9px;
+          min-height: 30px;
+        }
+      }
+
+      /* ===== TABS ===== */
+      .tab-bar {
+        position: sticky;
+        top: var(--header-h, 0px);
+        z-index: 90;
+        display: flex;
+        gap: 6px;
+        padding: 5px;
+        margin: 0 0 18px;
+        background: #ffffff;
+        border: 2px solid #b0c4d8;
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+
+      .tab-btn {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        min-height: 48px;
+        padding: 5px 8px;
+        border: none;
+        border-radius: 10px;
+        background: #eef4f9;
+        color: #1a4a6a;
+        font-family: inherit;
+        font-size: 0.9em;
+        font-weight: 700;
+        line-height: 1.3;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .tab-main {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .tab-en {
+        font-size: 0.62em;
+        font-weight: 400;
+        color: #5a7a8a;
+        letter-spacing: 0.2px;
+        line-height: 1.2;
+        transition: font-size 0.2s ease;
+      }
+
+      .tab-btn ruby rt {
+        font-size: 0.5em;
+        font-weight: 400;
+        color: #8b1a1a;
+      }
+
+      .tab-btn:hover:not(.is-active) {
+        background: #dcecf8;
+      }
+
+      .tab-btn.is-active {
+        background: #2c6b9e;
+        color: #ffffff;
+      }
+
+      .tab-btn.is-active .tab-en {
+        color: #d6e6f4;
+      }
+
+      .tab-btn.is-active ruby rt {
+        color: #ffd9d9;
+      }
+
+      .tab-btn:focus-visible,
+      .tab-panel:focus-visible {
+        outline: 2px solid #2c6b9e;
+        outline-offset: 2px;
+      }
+
+      .tab-panel[hidden] {
+        display: none !important;
+      }
+
+      .tab-panel > .qa-block,
+      .tab-panel > .think-block,
+      .tab-panel > .vocab-block {
+        margin-top: 0;
+      }
+
+      /* ===== ANSWER TOGGLE HINT ===== */
+      .answer-toggle-hint {
+        font-size: 0.78em;
+        font-weight: 400;
+        color: #3f5f7a;
+        line-height: 1.6;
+      }
+      .answer-toggle-hint ruby rt {
+        font-size: 0.55em;
+        color: #8b1a1a;
+        font-weight: 400;
+      }
+
+      @media (max-width: 700px) {
+        .tab-bar {
+          gap: 4px;
+          padding: 4px;
+          margin-bottom: 14px;
+        }
+        .tab-btn {
+          min-height: 42px;
+          padding: 4px;
+          font-size: 0.85em;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .tab-bar {
+          border-radius: 12px;
+        }
+        .tab-btn {
+          min-height: 38px;
+          font-size: 0.8em;
+        }
+        .tab-btn .tab-en {
+          display: none;
+        }
+      }
+
+      @media (max-width: 700px) and (orientation: landscape) {
+        .tab-bar {
+          margin-bottom: 10px;
+          padding: 3px;
+        }
+        .tab-btn {
+          min-height: 30px;
+          padding: 2px 6px;
+          font-size: 0.75em;
+        }
+        .tab-btn .tab-en {
+          display: none;
+        }
+      }
+
       /* ===== UTILITY ===== */
       .center {
         text-align: center;
@@ -1410,6 +1771,17 @@
         display: block;
       }
     </style>
+
+    <noscript>
+      <style>
+        .tab-panel[hidden] {
+          display: block !important;
+        }
+        .qa-item .answer {
+          display: inline-flex !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <!-- ===== STICKY HEADER ===== -->
@@ -1468,7 +1840,7 @@
 
         <!-- PDF Link -->
         <a
-          href="Reader L01-Fishing-Malaysia.pdf"
+          href="ReaderL01-Fishing-Malaysia.pdf"
           class="pdf-link"
           target="_blank"
         >
@@ -1486,8 +1858,8 @@
           preload="metadata"
           style="min-width: 50px"
         >
-          <source src="Reader L01-Fishing-Malaysia.mp4" type="audio/mp4" />
-          <source src="Reader L01-Fishing-Malaysia.mp3" type="audio/mpeg" />
+          <source src="ReaderL01-Fishing-Malaysia.mp4" type="audio/mp4" />
+          <source src="ReaderL01-Fishing-Malaysia.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
 
@@ -1500,7 +1872,67 @@
       </div>
     </div>
 
-    <!-- ===== MAIN CONTENT ===== -->
+    <!-- ===== TABS ===== -->
+    <nav class="tab-bar" role="tablist" aria-label="Sections">
+      <button
+        type="button"
+        class="tab-btn is-active"
+        id="tab-reader"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-reader"
+        data-tab="reader"
+      >
+        <span class="tab-main"
+          ><span class="tab-icon">📖</span
+          ><ruby>本文<rt>ほんぶん</rt></ruby></span
+        >
+        <span class="tab-en">Reader</span>
+      </button>
+
+      <button
+        type="button"
+        class="tab-btn"
+        id="tab-questions"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-questions"
+        data-tab="questions"
+        tabindex="-1"
+      >
+        <span class="tab-main"
+          ><span class="tab-icon">📘</span
+          ><ruby>質問<rt>しつもん</rt></ruby></span
+        >
+        <span class="tab-en">Questions</span>
+      </button>
+
+      <button
+        type="button"
+        class="tab-btn"
+        id="tab-vocab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-vocab"
+        data-tab="vocab"
+        tabindex="-1"
+      >
+        <span class="tab-main"
+          ><span class="tab-icon">📚</span
+          ><ruby>単語帳<rt>たんごちょう</rt></ruby></span
+        >
+        <span class="tab-en">Vocabulary</span>
+      </button>
+    </nav>
+
+    <!-- ===== MAIN CONTENT (Reader) ===== -->
+    <section
+      class="tab-panel"
+      id="panel-reader"
+      role="tabpanel"
+      aria-labelledby="tab-reader"
+      tabindex="0"
+    >
     <h1>
       <ruby>魚<rt>さかな</rt></ruby
       >つり
@@ -1857,8 +2289,17 @@
     </div>
 
     <hr />
+    </section>
 
     <!-- ===== 理解度テスト ===== -->
+    <section
+      class="tab-panel"
+      id="panel-questions"
+      role="tabpanel"
+      aria-labelledby="tab-questions"
+      tabindex="0"
+      hidden
+    >
     <div class="qa-block" id="qaBlock">
       <div class="section-header">
         <h2>
@@ -1877,21 +2318,24 @@
         </button>
         <span class="tts-status" id="ttsStatus"
           ><span class="highlight" id="ttsCounter">0</span> of
-          <span id="ttsTotal">16</span></span
+          <span id="ttsTotal">18</span></span
         >
       </div>
 
       <div class="answer-toggle">
         <label>
-          <input type="checkbox" id="hideAnswersToggle" checked />
-          <ruby>答<rt>こた</rt></ruby
-          >えを<ruby>隠<rt>かく</rt></ruby
-          >す (Hide answers)
+          <input type="checkbox" id="showAllAnswersToggle" />
+          <ruby>全<rt>すべ</rt></ruby
+          >ての<ruby>答<rt>こた</rt></ruby
+          >えを<ruby>表示<rt>ひょうじ</rt></ruby> (Show all answers)
         </label>
-        <span style="font-size: 0.8rem; font-weight: 400; color: #3f5f7a"
-          >⬅️ <ruby>外<rt>はず</rt></ruby
-          >すと<ruby>表示<rt>ひょうじ</rt></ruby
-          >されます</span
+        <span class="answer-toggle-hint"
+          >👁️ <ruby>各<rt>かく</rt></ruby
+          ><ruby>問<rt>もん</rt></ruby
+          >の「<ruby>答<rt>こた</rt></ruby
+          >え」ボタンで<ruby>個別<rt>こべつ</rt></ruby
+          >に<ruby>表示<rt>ひょうじ</rt></ruby
+          >できます</span
         >
       </div>
 
@@ -2469,6 +2913,119 @@
         </div>
       </div>
     </div>
+    </section>
+
+    <!-- ===== 単語帳 ===== -->
+    <section
+      class="tab-panel"
+      id="panel-vocab"
+      role="tabpanel"
+      aria-labelledby="tab-vocab"
+      tabindex="0"
+      hidden
+    >
+    <div class="vocab-block" id="vocabBlock">
+      <div class="section-header">
+        <h2>
+          📚 <ruby>単語帳<rt>たんごちょう</rt></ruby>
+        </h2>
+        <span class="en-header"
+          >(Vocabulary — Kanji in the story &amp; questions)</span
+        >
+      </div>
+
+      <p class="vocab-hint">
+        🔊 Tap to listen · Translation shows English
+      </p>
+
+      <div class="vocab-table-wrap">
+        <table class="vocab-table">
+          <thead>
+            <tr>
+              <th>漢字</th>
+              <th>ひらがな</th>
+              <th>例文 (Example Sentence)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="kanji-cell">今日</td><td class="kana-cell">きょう</td><td class="ex-cell"><span class="vocab-ja"><ruby>今日<rt>きょう</rt></ruby>、<ruby>魚<rt>さかな</rt></ruby>つりに<ruby>行<rt>い</rt></ruby>くからです。</span><span class="vocab-en">Because I&#x27;m going fishing today.</span></td></tr>
+            <tr><td class="kanji-cell">私</td><td class="kana-cell">わたし</td><td class="ex-cell"><span class="vocab-ja"><ruby>私<rt>わたし</rt></ruby>は<ruby>魚<rt>さかな</rt></ruby>つりのボートに<ruby>乗<rt>の</rt></ruby>りました。</span><span class="vocab-en">I got on the fishing boat.</span></td></tr>
+            <tr><td class="kanji-cell">魚</td><td class="kana-cell">さかな</td><td class="ex-cell"><span class="vocab-ja"><ruby>魚<rt>さかな</rt></ruby>の<ruby>料理<rt>りょうり</rt></ruby>です。</span><span class="vocab-en">It&#x27;s a fish dish.</span></td></tr>
+            <tr><td class="kanji-cell">行</td><td class="kana-cell">い</td><td class="ex-cell"><span class="vocab-ja"><ruby>車<rt>くるま</rt></ruby>で<ruby>行<rt>い</rt></ruby>きます。</span><span class="vocab-en">I go by car.</span></td></tr>
+            <tr><td class="kanji-cell">朝</td><td class="kana-cell">あさ</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>1.<ruby>筆者<rt>ひっしゃ</rt></ruby>はなぜ<ruby>朝<rt>あさ</rt></ruby>とても<ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>きましたか？</span><span class="vocab-en">Why did the author wake up so early in the morning?</span></td></tr>
+            <tr><td class="kanji-cell">早</td><td class="kana-cell">はや</td><td class="ex-cell"><span class="vocab-ja">——<ruby>早<rt>はや</rt></ruby>く<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>りたーい！——</span><span class="vocab-en">— I want to go home soon! —</span></td></tr>
+            <tr><td class="kanji-cell">起</td><td class="kana-cell">お</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>1.<ruby>筆者<rt>ひっしゃ</rt></ruby>はなぜ<ruby>朝<rt>あさ</rt></ruby>とても<ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>きましたか？</span><span class="vocab-en">Why did the author wake up so early in the morning?</span></td></tr>
+            <tr><td class="kanji-cell">車</td><td class="kana-cell">くるま</td><td class="ex-cell"><span class="vocab-ja"><ruby>車<rt>くるま</rt></ruby>で<ruby>行<rt>い</rt></ruby>きます。</span><span class="vocab-en">I go by car.</span></td></tr>
+            <tr><td class="kanji-cell">海</td><td class="kana-cell">うみ</td><td class="ex-cell"><span class="vocab-ja"><ruby>海<rt>うみ</rt></ruby>で<ruby>遊<rt>あそ</rt></ruby>んでいました。</span><span class="vocab-en">They were playing at the sea.</span></td></tr>
+            <tr><td class="kanji-cell">好</td><td class="kana-cell">す</td><td class="ex-cell"><span class="vocab-ja"><ruby>息子<rt>むすこ</rt></ruby>も<ruby>海<rt>うみ</rt></ruby>が<ruby>好<rt>す</rt></ruby>きだから。</span><span class="vocab-en">Because my son also likes the sea.</span></td></tr>
+            <tr><td class="kanji-cell">家</td><td class="kana-cell">いえ</td><td class="ex-cell"><span class="vocab-ja">——<ruby>早<rt>はや</rt></ruby>く<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>りたーい！——</span><span class="vocab-en">— I want to go home soon! —</span></td></tr>
+            <tr><td class="kanji-cell">一番</td><td class="kana-cell">いちばん</td><td class="ex-cell"><span class="vocab-ja">マレーシアで<ruby>一番<rt>いちばん</rt></ruby><ruby>大<rt>おお</rt></ruby>きい<ruby>街<rt>まち</rt></ruby>です。</span><span class="vocab-en">It is the biggest city in Malaysia.</span></td></tr>
+            <tr><td class="kanji-cell">大</td><td class="kana-cell">おお</td><td class="ex-cell"><span class="vocab-ja"><ruby>妻<rt>つま</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きい<ruby>声<rt>こえ</rt></ruby>で<ruby>笑<rt>わら</rt></ruby>いました。</span><span class="vocab-en">My wife laughed loudly.</span></td></tr>
+            <tr><td class="kanji-cell">街</td><td class="kana-cell">まち</td><td class="ex-cell"><span class="vocab-ja">マレーシアで<ruby>一番<rt>いちばん</rt></ruby><ruby>大<rt>おお</rt></ruby>きい<ruby>街<rt>まち</rt></ruby>です。</span><span class="vocab-en">It is the biggest city in Malaysia.</span></td></tr>
+            <tr><td class="kanji-cell">道</td><td class="kana-cell">みち</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>5.クアラルンプールの<ruby>道<rt>みち</rt></ruby>はどのような<ruby>様子<rt>ようす</rt></ruby>ですか？</span><span class="vocab-en">What are the roads of Kuala Lumpur like?</span></td></tr>
+            <tr><td class="kanji-cell">前</td><td class="kana-cell">まえ</td><td class="ex-cell"><span class="vocab-ja">いいえ、<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>る<ruby>前<rt>まえ</rt></ruby>、<ruby>お店<rt>みせ</rt></ruby>で<ruby>買<rt>か</rt></ruby>いました……。</span><span class="vocab-en">No, before going home, I bought it at the store...</span></td></tr>
+            <tr><td class="kanji-cell">後</td><td class="kana-cell">うし</td><td class="ex-cell"><span class="vocab-ja">クアラルンプールの<ruby>道<rt>みち</rt></ruby>は、どこも<ruby>車<rt>くるま</rt></ruby>、<ruby>車<rt>くるま</rt></ruby>、<ruby>車<rt>くるま</rt></ruby>。<ruby>前<rt>まえ</rt></ruby>に<ruby>車<rt>くるま</rt></ruby>。<ruby>後<rt>うし</rt></ruby>ろにも<ruby>車<rt>くるま</rt></ruby>。どの<ruby>車<rt>くるま</rt></ruby>も、ゆっくりゆっくり<ruby>行<rt>い</rt></ruby>きます。</span><span class="vocab-en">The roads of Kuala Lumpur are cars, cars, cars everywhere. Cars in front. Cars behind too. Every car goes slowly, slowly.</span></td></tr>
+            <tr><td class="kanji-cell">来</td><td class="kana-cell">き</td><td class="ex-cell"><span class="vocab-ja"><ruby>海<rt>うみ</rt></ruby>に<ruby>来<rt>き</rt></ruby>ました。まだ<ruby>誰<rt>だれ</rt></ruby>もいません。</span><span class="vocab-en">I came to the sea. There&#x27;s still nobody here.</span></td></tr>
+            <tr><td class="kanji-cell">誰</td><td class="kana-cell">だれ</td><td class="ex-cell"><span class="vocab-ja"><ruby>海<rt>うみ</rt></ruby>に<ruby>来<rt>き</rt></ruby>ました。まだ<ruby>誰<rt>だれ</rt></ruby>もいません。</span><span class="vocab-en">I came to the sea. There&#x27;s still nobody here.</span></td></tr>
+            <tr><td class="kanji-cell">乗</td><td class="kana-cell">の</td><td class="ex-cell"><span class="vocab-ja"><ruby>私<rt>わたし</rt></ruby>は<ruby>魚<rt>さかな</rt></ruby>つりのボートに<ruby>乗<rt>の</rt></ruby>りました。</span><span class="vocab-en">I got on the fishing boat.</span></td></tr>
+            <tr><td class="kanji-cell">待</td><td class="kana-cell">ま</td><td class="ex-cell"><span class="vocab-ja"><ruby>魚<rt>さかな</rt></ruby>が<ruby>来<rt>く</rt></ruby>るのを<ruby>静<rt>しず</rt></ruby>かに<ruby>待<rt>ま</rt></ruby>ちました。</span><span class="vocab-en">I waited quietly for the fish to come.</span></td></tr>
+            <tr><td class="kanji-cell">静</td><td class="kana-cell">しず</td><td class="ex-cell"><span class="vocab-ja"><ruby>魚<rt>さかな</rt></ruby>が<ruby>来<rt>く</rt></ruby>るのを<ruby>静<rt>しず</rt></ruby>かに<ruby>待<rt>ま</rt></ruby>ちました。</span><span class="vocab-en">I waited quietly for the fish to come.</span></td></tr>
+            <tr><td class="kanji-cell">長</td><td class="kana-cell">なが</td><td class="ex-cell"><span class="vocab-ja"><ruby>静<rt>しず</rt></ruby>かに<ruby>静<rt>しず</rt></ruby>かに、<ruby>長<rt>なが</rt></ruby>い<ruby>時間<rt>じかん</rt></ruby>、<ruby>魚<rt>さかな</rt></ruby>を<ruby>待<rt>ま</rt></ruby>ちましたが、だめでした。</span><span class="vocab-en">Quietly, quietly, for a long time, I waited for the fish, but it was no good.</span></td></tr>
+            <tr><td class="kanji-cell">時間</td><td class="kana-cell">じかん</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>7.なぜ<ruby>魚<rt>さかな</rt></ruby><ruby>釣<rt>つ</rt></ruby>りに<ruby>行<rt>い</rt></ruby>くまでに<ruby>時間<rt>じかん</rt></ruby>がかかるのですか？</span><span class="vocab-en">Why does it take time to go fishing?</span></td></tr>
+            <tr><td class="kanji-cell">悲</td><td class="kana-cell">かな</td><td class="ex-cell"><span class="vocab-ja"><ruby>悲<rt>かな</rt></ruby>しい<ruby>気持<rt>きも</rt></ruby>ちです。</span><span class="vocab-en">I feel sad.</span></td></tr>
+            <tr><td class="kanji-cell">空</td><td class="kana-cell">そら</td><td class="ex-cell"><span class="vocab-ja"><ruby>空<rt>そら</rt></ruby>が<ruby>明<rt>あか</rt></ruby>るくなりました。</span><span class="vocab-en">The sky became bright.</span></td></tr>
+            <tr><td class="kanji-cell">明</td><td class="kana-cell">あか</td><td class="ex-cell"><span class="vocab-ja"><ruby>空<rt>そら</rt></ruby>が<ruby>明<rt>あか</rt></ruby>るくなりました。</span><span class="vocab-en">The sky became bright.</span></td></tr>
+            <tr><td class="kanji-cell">お腹</td><td class="kana-cell">なか</td><td class="ex-cell"><span class="vocab-ja"><ruby>お腹<rt>なか</rt></ruby>もすきました。だから、もう<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>ります。</span><span class="vocab-en">I got hungry too. So, I&#x27;ll go home now.</span></td></tr>
+            <tr><td class="kanji-cell">帰</td><td class="kana-cell">かえ</td><td class="ex-cell"><span class="vocab-ja">——<ruby>早<rt>はや</rt></ruby>く<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>りたーい！——</span><span class="vocab-en">— I want to go home soon! —</span></td></tr>
+            <tr><td class="kanji-cell">息子</td><td class="kana-cell">むすこ</td><td class="ex-cell"><span class="vocab-ja"><ruby>息子<rt>むすこ</rt></ruby>も<ruby>海<rt>うみ</rt></ruby>が<ruby>好<rt>す</rt></ruby>きだから。</span><span class="vocab-en">Because my son also likes the sea.</span></td></tr>
+            <tr><td class="kanji-cell">妻</td><td class="kana-cell">つま</td><td class="ex-cell"><span class="vocab-ja"><ruby>妻<rt>つま</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きい<ruby>声<rt>こえ</rt></ruby>で<ruby>笑<rt>わら</rt></ruby>いました。</span><span class="vocab-en">My wife laughed loudly.</span></td></tr>
+            <tr><td class="kanji-cell">遊</td><td class="kana-cell">あそ</td><td class="ex-cell"><span class="vocab-ja"><ruby>海<rt>うみ</rt></ruby>で<ruby>遊<rt>あそ</rt></ruby>んでいました。</span><span class="vocab-en">They were playing at the sea.</span></td></tr>
+            <tr><td class="kanji-cell">お昼</td><td class="kana-cell">ひる</td><td class="ex-cell"><span class="vocab-ja"><ruby>お昼<rt>ひる</rt></ruby>ごはんは<ruby>魚<rt>さかな</rt></ruby>の<ruby>料理<rt>りょうり</rt></ruby>です！</span><span class="vocab-en">Lunch is fish dish!</span></td></tr>
+            <tr><td class="kanji-cell">料理</td><td class="kana-cell">りょうり</td><td class="ex-cell"><span class="vocab-ja"><ruby>魚<rt>さかな</rt></ruby>の<ruby>料理<rt>りょうり</rt></ruby>です。</span><span class="vocab-en">It&#x27;s a fish dish.</span></td></tr>
+            <tr><td class="kanji-cell">お店</td><td class="kana-cell">みせ</td><td class="ex-cell"><span class="vocab-ja"><ruby>お店<rt>みせ</rt></ruby>で<ruby>買<rt>か</rt></ruby>いました。</span><span class="vocab-en">I bought it at the store.</span></td></tr>
+            <tr><td class="kanji-cell">買</td><td class="kana-cell">か</td><td class="ex-cell"><span class="vocab-ja"><ruby>お店<rt>みせ</rt></ruby>で<ruby>買<rt>か</rt></ruby>いました。</span><span class="vocab-en">I bought it at the store.</span></td></tr>
+            <tr><td class="kanji-cell">聞</td><td class="kana-cell">き</td><td class="ex-cell"><span class="vocab-ja"><ruby>息子<rt>むすこ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>に<ruby>聞<rt>き</rt></ruby>きました。「これ、<ruby>今日<rt>きょう</rt></ruby>の<ruby>魚<rt>さかな</rt></ruby>つりの<ruby>魚<rt>さかな</rt></ruby>？」</span><span class="vocab-en">My son asked me. &quot;Is this today&#x27;s fishing fish?&quot;</span></td></tr>
+            <tr><td class="kanji-cell">答</td><td class="kana-cell">こた</td><td class="ex-cell"><span class="vocab-ja"><ruby>考<rt>こう</rt></ruby>1.<ruby>筆者<rt>ひっしゃ</rt></ruby>はなぜ<ruby>小<rt>ちい</rt></ruby>さい<ruby>声<rt>こえ</rt></ruby>で<ruby>答<rt>こた</rt></ruby>えましたか？</span><span class="vocab-en">Why did the author answer in a small voice?</span></td></tr>
+            <tr><td class="kanji-cell">小</td><td class="kana-cell">ちい</td><td class="ex-cell"><span class="vocab-ja"><ruby>考<rt>こう</rt></ruby>1.<ruby>筆者<rt>ひっしゃ</rt></ruby>はなぜ<ruby>小<rt>ちい</rt></ruby>さい<ruby>声<rt>こえ</rt></ruby>で<ruby>答<rt>こた</rt></ruby>えましたか？</span><span class="vocab-en">Why did the author answer in a small voice?</span></td></tr>
+            <tr><td class="kanji-cell">声</td><td class="kana-cell">こえ</td><td class="ex-cell"><span class="vocab-ja"><ruby>妻<rt>つま</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きい<ruby>声<rt>こえ</rt></ruby>で<ruby>笑<rt>わら</rt></ruby>いました。</span><span class="vocab-en">My wife laughed loudly.</span></td></tr>
+            <tr><td class="kanji-cell">店</td><td class="kana-cell">みせ</td><td class="ex-cell"><span class="vocab-ja"><ruby>本当<rt>ほんとう</rt></ruby>は<ruby>魚<rt>さかな</rt></ruby>を<ruby>釣<rt>つ</rt></ruby>れなかったので、<ruby>店<rt>みせ</rt></ruby>で<ruby>買<rt>か</rt></ruby>ったと<ruby>言<rt>い</rt></ruby>いにくかったから。</span><span class="vocab-en">Because he actually didn&#x27;t catch any fish, so it was hard to say he bought it at the store.</span></td></tr>
+            <tr><td class="kanji-cell">笑</td><td class="kana-cell">わら</td><td class="ex-cell"><span class="vocab-ja"><ruby>妻<rt>つま</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きい<ruby>声<rt>こえ</rt></ruby>で<ruby>笑<rt>わら</rt></ruby>いました。</span><span class="vocab-en">My wife laughed loudly.</span></td></tr>
+            <tr><td class="kanji-cell">父</td><td class="kana-cell">とう</td><td class="ex-cell"><span class="vocab-ja">3<ruby>人<rt>にん</rt></ruby><ruby>家族<rt>かぞく</rt></ruby>です。<ruby>筆者<rt>ひっしゃ</rt></ruby>（お<ruby>父<rt>とう</rt></ruby>さん）、<ruby>妻<rt>つま</rt></ruby>（お<ruby>母<rt>かあ</rt></ruby>さん）、<ruby>息子<rt>むすこ</rt></ruby>の3<ruby>人<rt>にん</rt></ruby>です。</span><span class="vocab-en">It&#x27;s a family of three. The writer (father), wife (mother), and son — three people.</span></td></tr>
+            <tr><td class="kanji-cell">二人</td><td class="kana-cell">ふたり</td><td class="ex-cell"><span class="vocab-ja"><ruby>私<rt>わたし</rt></ruby>は<ruby>二人<rt>ふたり</rt></ruby>に<ruby>言<rt>い</rt></ruby>いました。「<ruby>次<rt>つぎ</rt></ruby>は、<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>海<rt>うみ</rt></ruby>で<ruby>遊<rt>あそ</rt></ruby>びましょう」</span><span class="vocab-en">I said to the two of them. &quot;Next time, let&#x27;s play together at the sea.&quot;</span></td></tr>
+            <tr><td class="kanji-cell">言</td><td class="kana-cell">い</td><td class="ex-cell"><span class="vocab-ja">「<ruby>次<rt>つぎ</rt></ruby>は<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>海<rt>うみ</rt></ruby>で<ruby>遊<rt>あそ</rt></ruby>びましょう」と<ruby>言<rt>い</rt></ruby>いました。</span><span class="vocab-en">I said, &quot;Next time, let&#x27;s play together at the sea.&quot;</span></td></tr>
+            <tr><td class="kanji-cell">次</td><td class="kana-cell">つぎ</td><td class="ex-cell"><span class="vocab-ja">「<ruby>次<rt>つぎ</rt></ruby>は<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>海<rt>うみ</rt></ruby>で<ruby>遊<rt>あそ</rt></ruby>びましょう」と<ruby>言<rt>い</rt></ruby>いました。</span><span class="vocab-en">I said, &quot;Next time, let&#x27;s play together at the sea.&quot;</span></td></tr>
+            <tr><td class="kanji-cell">一緒</td><td class="kana-cell">いっしょ</td><td class="ex-cell"><span class="vocab-ja">「<ruby>次<rt>つぎ</rt></ruby>は<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>海<rt>うみ</rt></ruby>で<ruby>遊<rt>あそ</rt></ruby>びましょう」と<ruby>言<rt>い</rt></ruby>いました。</span><span class="vocab-en">I said, &quot;Next time, let&#x27;s play together at the sea.&quot;</span></td></tr>
+            <tr><td class="kanji-cell">読</td><td class="kana-cell">よ</td><td class="ex-cell"><span class="vocab-ja"><ruby>読<rt>よ</rt></ruby>んで<ruby>答<rt>こた</rt></ruby>えよう</span><span class="vocab-en">Read and Answer</span></td></tr>
+            <tr><td class="kanji-cell">問</td><td class="kana-cell">もん</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>6.どこで<ruby>魚<rt>さかな</rt></ruby><ruby>釣<rt>つ</rt></ruby>りをしますか？</span><span class="vocab-en">Where do you go fishing?</span></td></tr>
+            <tr><td class="kanji-cell">筆者</td><td class="kana-cell">ひっしゃ</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>3.<ruby>筆者<rt>ひっしゃ</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>はどこにありますか？</span><span class="vocab-en">Where is the author&#x27;s house?</span></td></tr>
+            <tr><td class="kanji-cell">釣</td><td class="kana-cell">つ</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>6.どこで<ruby>魚<rt>さかな</rt></ruby><ruby>釣<rt>つ</rt></ruby>りをしますか？</span><span class="vocab-en">Where do you go fishing?</span></td></tr>
+            <tr><td class="kanji-cell">何</td><td class="kana-cell">なに</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>2.<ruby>魚<rt>さかな</rt></ruby><ruby>釣<rt>つ</rt></ruby>りへは<ruby>何<rt>なに</rt></ruby>で<ruby>行<rt>い</rt></ruby>きますか？</span><span class="vocab-en">How do you go fishing?</span></td></tr>
+            <tr><td class="kanji-cell">様子</td><td class="kana-cell">ようす</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>5.クアラルンプールの<ruby>道<rt>みち</rt></ruby>はどのような<ruby>様子<rt>ようす</rt></ruby>ですか？</span><span class="vocab-en">What are the roads of Kuala Lumpur like?</span></td></tr>
+            <tr><td class="kanji-cell">進</td><td class="kana-cell">すす</td><td class="ex-cell"><span class="vocab-ja">どこも<ruby>車<rt>くるま</rt></ruby>がたくさんいて、どの<ruby>車<rt>くるま</rt></ruby>もゆっくりゆっくり<ruby>進<rt>すす</rt></ruby>みます。</span><span class="vocab-en">There are cars everywhere, and every car goes slowly, slowly.</span></td></tr>
+            <tr><td class="kanji-cell">多</td><td class="kana-cell">おお</td><td class="ex-cell"><span class="vocab-ja">クアラルンプールの<ruby>道<rt>みち</rt></ruby>は<ruby>車<rt>くるま</rt></ruby>がとても<ruby>多<rt>おお</rt></ruby>くて<ruby>渋滞<rt>じゅうたい</rt></ruby>するからです。</span><span class="vocab-en">Because the roads in Kuala Lumpur have a lot of cars and traffic jams.</span></td></tr>
+            <tr><td class="kanji-cell">渋滞</td><td class="kana-cell">じゅうたい</td><td class="ex-cell"><span class="vocab-ja">クアラルンプールの<ruby>道<rt>みち</rt></ruby>は<ruby>車<rt>くるま</rt></ruby>がとても<ruby>多<rt>おお</rt></ruby>くて<ruby>渋滞<rt>じゅうたい</rt></ruby>するからです。</span><span class="vocab-en">Because the roads in Kuala Lumpur have a lot of cars and traffic jams.</span></td></tr>
+            <tr><td class="kanji-cell">来</td><td class="kana-cell">く</td><td class="ex-cell"><span class="vocab-ja"><ruby>魚<rt>さかな</rt></ruby>が<ruby>来<rt>く</rt></ruby>るのを<ruby>静<rt>しず</rt></ruby>かに<ruby>待<rt>ま</rt></ruby>ちました。</span><span class="vocab-en">I waited quietly for the fish to come.</span></td></tr>
+            <tr><td class="kanji-cell">気持</td><td class="kana-cell">きも</td><td class="ex-cell"><span class="vocab-ja"><ruby>悲<rt>かな</rt></ruby>しい<ruby>気持<rt>きも</rt></ruby>ちです。</span><span class="vocab-en">I feel sad.</span></td></tr>
+            <tr><td class="kanji-cell">理由</td><td class="kana-cell">りゆう</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>10.<ruby>筆者<rt>ひっしゃ</rt></ruby>はなぜ<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>ることにしましたか？（2つ<ruby>理由<rt>りゆう</rt></ruby>を<ruby>答<rt>こた</rt></ruby>えてください）</span><span class="vocab-en">Why did the author decide to go home? Give 2 reasons.</span></td></tr>
+            <tr><td class="kanji-cell">昼食</td><td class="kana-cell">ちゅうしょく</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>13.<ruby>今日<rt>きょう</rt></ruby>の<ruby>昼食<rt>ちゅうしょく</rt></ruby>は<ruby>何<rt>なに</rt></ruby>でしたか？</span><span class="vocab-en">What was today&#x27;s lunch?</span></td></tr>
+            <tr><td class="kanji-cell">手</td><td class="kana-cell">て</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>14.<ruby>魚<rt>さかな</rt></ruby>はどこで<ruby>手<rt>て</rt></ruby>に<ruby>入<rt>い</rt></ruby>れましたか？</span><span class="vocab-en">Where did you get the fish?</span></td></tr>
+            <tr><td class="kanji-cell">入</td><td class="kana-cell">い</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>14.<ruby>魚<rt>さかな</rt></ruby>はどこで<ruby>手<rt>て</rt></ruby>に<ruby>入<rt>い</rt></ruby>れましたか？</span><span class="vocab-en">Where did you get the fish?</span></td></tr>
+            <tr><td class="kanji-cell">最後</td><td class="kana-cell">さいご</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>15.<ruby>筆者<rt>ひっしゃ</rt></ruby>は<ruby>最後<rt>さいご</rt></ruby>に<ruby>家族<rt>かぞく</rt></ruby>に<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いましたか？</span><span class="vocab-en">What did the author say to the family at the end?</span></td></tr>
+            <tr><td class="kanji-cell">家族</td><td class="kana-cell">かぞく</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>15.<ruby>筆者<rt>ひっしゃ</rt></ruby>は<ruby>最後<rt>さいご</rt></ruby>に<ruby>家族<rt>かぞく</rt></ruby>に<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いましたか？</span><span class="vocab-en">What did the author say to the family at the end?</span></td></tr>
+            <tr><td class="kanji-cell">何</td><td class="kana-cell">なん</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>15.<ruby>筆者<rt>ひっしゃ</rt></ruby>は<ruby>最後<rt>さいご</rt></ruby>に<ruby>家族<rt>かぞく</rt></ruby>に<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いましたか？</span><span class="vocab-en">What did the author say to the family at the end?</span></td></tr>
+            <tr><td class="kanji-cell">教</td><td class="kana-cell">おし</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>16.<ruby>筆者<rt>ひっしゃ</rt></ruby>の<ruby>家族<rt>かぞく</rt></ruby>について<ruby>教<rt>おし</rt></ruby>えてください。（<ruby>何人<rt>なんにん</rt></ruby><ruby>家族<rt>かぞく</rt></ruby>ですか？）</span><span class="vocab-en">Tell me about the author&#x27;s family. How many people?</span></td></tr>
+            <tr><td class="kanji-cell">何人</td><td class="kana-cell">なんにん</td><td class="ex-cell"><span class="vocab-ja"><ruby>問<rt>もん</rt></ruby>16.<ruby>筆者<rt>ひっしゃ</rt></ruby>の<ruby>家族<rt>かぞく</rt></ruby>について<ruby>教<rt>おし</rt></ruby>えてください。（<ruby>何人<rt>なんにん</rt></ruby><ruby>家族<rt>かぞく</rt></ruby>ですか？）</span><span class="vocab-en">Tell me about the author&#x27;s family. How many people?</span></td></tr>
+            <tr><td class="kanji-cell">人</td><td class="kana-cell">にん</td><td class="ex-cell"><span class="vocab-ja">3<ruby>人<rt>にん</rt></ruby><ruby>家族<rt>かぞく</rt></ruby>です。<ruby>筆者<rt>ひっしゃ</rt></ruby>（お<ruby>父<rt>とう</rt></ruby>さん）、<ruby>妻<rt>つま</rt></ruby>（お<ruby>母<rt>かあ</rt></ruby>さん）、<ruby>息子<rt>むすこ</rt></ruby>の3<ruby>人<rt>にん</rt></ruby>です。</span><span class="vocab-en">It&#x27;s a family of three. The writer (father), wife (mother), and son — three people.</span></td></tr>
+            <tr><td class="kanji-cell">母</td><td class="kana-cell">かあ</td><td class="ex-cell"><span class="vocab-ja">3<ruby>人<rt>にん</rt></ruby><ruby>家族<rt>かぞく</rt></ruby>です。<ruby>筆者<rt>ひっしゃ</rt></ruby>（お<ruby>父<rt>とう</rt></ruby>さん）、<ruby>妻<rt>つま</rt></ruby>（お<ruby>母<rt>かあ</rt></ruby>さん）、<ruby>息子<rt>むすこ</rt></ruby>の3<ruby>人<rt>にん</rt></ruby>です。</span><span class="vocab-en">It&#x27;s a family of three. The writer (father), wife (mother), and son — three people.</span></td></tr>
+            <tr><td class="kanji-cell">考</td><td class="kana-cell">かんが</td><td class="ex-cell"><span class="vocab-ja"><ruby>考<rt>かんが</rt></ruby>えよう</span><span class="vocab-en">Think About It</span></td></tr>
+            <tr><td class="kanji-cell">考</td><td class="kana-cell">こう</td><td class="ex-cell"><span class="vocab-ja"><ruby>考<rt>こう</rt></ruby>1.<ruby>筆者<rt>ひっしゃ</rt></ruby>はなぜ<ruby>小<rt>ちい</rt></ruby>さい<ruby>声<rt>こえ</rt></ruby>で<ruby>答<rt>こた</rt></ruby>えましたか？</span><span class="vocab-en">Why did the author answer in a small voice?</span></td></tr>
+            <tr><td class="kanji-cell">本当</td><td class="kana-cell">ほんとう</td><td class="ex-cell"><span class="vocab-ja"><ruby>本当<rt>ほんとう</rt></ruby>は<ruby>魚<rt>さかな</rt></ruby>を<ruby>釣<rt>つ</rt></ruby>れなかったので、<ruby>店<rt>みせ</rt></ruby>で<ruby>買<rt>か</rt></ruby>ったと<ruby>言<rt>い</rt></ruby>いにくかったから。</span><span class="vocab-en">Because he actually didn&#x27;t catch any fish, so it was hard to say he bought it at the store.</span></td></tr>
+            <tr><td class="kanji-cell">匹</td><td class="kana-cell">ぴき</td><td class="ex-cell"><span class="vocab-ja">うまくいきませんでした。<ruby>魚<rt>さかな</rt></ruby>が1<ruby>匹<rt>ぴき</rt></ruby>も<ruby>釣<rt>つ</rt></ruby>れなかったからです。</span><span class="vocab-en">It didn&#x27;t go well. Because he didn&#x27;t catch a single fish.</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <div class="page-footer">
@@ -2530,56 +3087,188 @@
           Yong, Jarell's wife)</span
         >
       </div>
-
-      <div
-        class="footer-item"
-        style="margin-top: 6px; font-size: 11px; color: #6a7a8a"
-      >
-        📄 <ruby>模範<rt>もはん</rt></ruby
-        ><ruby>解答<rt>かいとう</rt></ruby
-        >は「Reader L01-Fishing-Malaysia-Test.pdf」より<ruby
-          >引用<rt>いんよう</rt></ruby
-        >
-        / Model answers from "Reader L01-Fishing-Malaysia-Test.pdf"
-      </div>
     </div>
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
       (function () {
-        // ===== TOGGLES =====
-        const furiganaToggle = document.getElementById("furiganaToggle");
-        const translationToggle = document.getElementById("translationToggle");
+        "use strict";
+
         const body = document.body;
 
-        furiganaToggle.addEventListener("change", function () {
-          body.classList.toggle("no-furigana", !this.checked);
-        });
+        // ===== FURIGANA & TRANSLATION =====
+        const furiganaToggle = document.getElementById("furiganaToggle");
+        const translationToggle = document.getElementById("translationToggle");
 
-        translationToggle.addEventListener("change", function () {
-          body.classList.toggle("show-translation", this.checked);
-        });
+        if (furiganaToggle) {
+          furiganaToggle.addEventListener("change", function () {
+            body.classList.toggle("no-furigana", !this.checked);
+          });
+        }
 
-        // ===== HIDE ANSWERS TOGGLE =====
-        const hideAnswersToggle = document.getElementById("hideAnswersToggle");
-        const qaBlock = document.getElementById("qaBlock");
-        hideAnswersToggle.checked = true;
-        qaBlock.classList.add("qa-answer-hidden");
-        qaBlock.classList.remove("qa-answer-visible");
+        if (translationToggle) {
+          translationToggle.addEventListener("change", function () {
+            body.classList.toggle("show-translation", this.checked);
+          });
+        }
 
-        hideAnswersToggle.addEventListener("change", function () {
-          if (this.checked) {
-            qaBlock.classList.add("qa-answer-hidden");
-            qaBlock.classList.remove("qa-answer-visible");
-          } else {
-            qaBlock.classList.remove("qa-answer-hidden");
-            qaBlock.classList.add("qa-answer-visible");
-          }
-        });
-
+        // Furigana on, translation off on first load.
         body.classList.remove("no-furigana");
-        body.style.color = "#000000";
         body.classList.remove("show-translation");
+
+        // ===== TABS =====
+        const headerEl = document.getElementById("stickyHeader");
+        const tabButtons = Array.prototype.slice.call(
+          document.querySelectorAll(".tab-btn"),
+        );
+        const tabPanels = {
+          reader: document.getElementById("panel-reader"),
+          questions: document.getElementById("panel-questions"),
+          vocab: document.getElementById("panel-vocab"),
+        };
+        const tabScroll = {};
+        let activeTab = "reader";
+
+        function setHeaderHeightVar() {
+          if (!headerEl) return;
+          document.documentElement.style.setProperty(
+            "--header-h",
+            headerEl.offsetHeight + "px",
+          );
+        }
+
+        function activateTab(name, options) {
+          if (!tabPanels[name] || name === activeTab) return;
+
+          const opts = options || {};
+
+          if (activeTab) {
+            tabScroll[activeTab] = window.scrollY;
+          }
+
+          Object.keys(tabPanels).forEach(function (key) {
+            if (tabPanels[key]) {
+              tabPanels[key].hidden = key !== name;
+            }
+          });
+
+          tabButtons.forEach(function (btn) {
+            const selected = btn.dataset.tab === name;
+            btn.classList.toggle("is-active", selected);
+            btn.setAttribute("aria-selected", selected ? "true" : "false");
+            btn.tabIndex = selected ? 0 : -1;
+          });
+
+          activeTab = name;
+
+          if (opts.scroll === false) return;
+
+          const target = tabScroll[name] || 0;
+          requestAnimationFrame(function () {
+            window.scrollTo(0, target);
+          });
+        }
+
+        tabButtons.forEach(function (btn, index) {
+          btn.addEventListener("click", function () {
+            activateTab(btn.dataset.tab);
+            try {
+              history.replaceState(null, "", "#" + btn.dataset.tab);
+            } catch (error) {
+              /* file:// or restricted context: ignore */
+            }
+          });
+
+          btn.addEventListener("keydown", function (event) {
+            let step = 0;
+            if (event.key === "ArrowRight") step = 1;
+            if (event.key === "ArrowLeft") step = -1;
+            if (!step) return;
+            event.preventDefault();
+            const next =
+              (index + step + tabButtons.length) % tabButtons.length;
+            tabButtons[next].focus();
+            tabButtons[next].click();
+          });
+        });
+
+        window.addEventListener("resize", setHeaderHeightVar);
+        if (headerEl && typeof ResizeObserver !== "undefined") {
+          new ResizeObserver(setHeaderHeightVar).observe(headerEl);
+        }
+        setHeaderHeightVar();
+
+        const hashTab = (window.location.hash || "").replace("#", "");
+        if (tabPanels[hashTab]) {
+          activateTab(hashTab, { scroll: false });
+        }
+
+        // ===== ANSWERS: REVEAL PER QUESTION =====
+        const answerItems = Array.prototype.slice
+          .call(document.querySelectorAll(".qa-item"))
+          .filter(function (item) {
+            return item.querySelector(".answer");
+          });
+        const showAllToggle = document.getElementById("showAllAnswersToggle");
+
+        function setAnswerShown(item, show) {
+          const btn = item.querySelector(".q-answer-toggle-btn");
+          item.classList.toggle("answer-shown", show);
+          if (!btn) return;
+
+          btn.setAttribute("aria-expanded", show ? "true" : "false");
+          btn.setAttribute("aria-label", show ? "Hide answer" : "Show answer");
+          btn.innerHTML = show
+            ? '🙈 <ruby>隠<rt>かく</rt></ruby>す'
+            : '👁️ <ruby>答<rt>こた</rt></ruby>え';
+        }
+
+        function syncShowAllToggle() {
+          if (!showAllToggle) return;
+          const shown = answerItems.filter(function (item) {
+            return item.classList.contains("answer-shown");
+          }).length;
+          showAllToggle.checked = shown > 0 && shown === answerItems.length;
+          showAllToggle.indeterminate = shown > 0 && shown < answerItems.length;
+        }
+
+        answerItems.forEach(function (item, index) {
+          const questionEl = item.querySelector(".question");
+          const answerEl = item.querySelector(".answer");
+          if (!questionEl || !answerEl) return;
+
+          if (!answerEl.id) {
+            answerEl.id = "answer-" + (index + 1);
+          }
+
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "q-answer-toggle-btn";
+          btn.setAttribute("aria-expanded", "false");
+          btn.setAttribute("aria-controls", answerEl.id);
+          btn.setAttribute("aria-label", "Show answer");
+          btn.innerHTML = '👁️ <ruby>答<rt>こた</rt></ruby>え';
+
+          btn.addEventListener("click", function (event) {
+            event.stopPropagation();
+            setAnswerShown(item, !item.classList.contains("answer-shown"));
+            syncShowAllToggle();
+          });
+
+          questionEl.appendChild(btn);
+        });
+
+        if (showAllToggle) {
+          showAllToggle.addEventListener("change", function () {
+            const show = showAllToggle.checked;
+            showAllToggle.indeterminate = false;
+            answerItems.forEach(function (item) {
+              setAnswerShown(item, show);
+            });
+          });
+        }
+
+        syncShowAllToggle();
 
         // ===== FONT SIZE SLIDER =====
         const fontSizeSlider = document.getElementById("fontSizeSlider");
@@ -2649,9 +3338,35 @@
           window.speechSynthesis.speak(utterance);
         }
 
+        // ===== VOCABULARY SPEAKER BUTTONS =====
+        document
+          .querySelectorAll(".vocab-table tbody tr")
+          .forEach(function (row) {
+            const ja = row.querySelector(".vocab-ja");
+            if (!ja) return;
+
+            const clone = ja.cloneNode(true);
+            clone
+              .querySelectorAll("rt, .vocab-speaker")
+              .forEach(function (el) {
+                el.remove();
+              });
+            const sentence = (clone.textContent || "")
+              .replace(/\s+/g, " ")
+              .trim();
+            if (!sentence) return;
+
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "speaker-btn vocab-speaker";
+            btn.dataset.tts = sentence;
+            btn.setAttribute("aria-label", "Read the example sentence aloud");
+            btn.textContent = "🔊";
+            ja.appendChild(btn);
+          });
+
         // ===== INDIVIDUAL SPEAKER BUTTONS =====
-        const speakerBtns = document.querySelectorAll(".speaker-btn");
-        speakerBtns.forEach(function (btn) {
+        document.querySelectorAll(".speaker-btn").forEach(function (btn) {
           btn.addEventListener("click", function (e) {
             e.stopPropagation();
             const text = this.dataset.tts;
@@ -2677,7 +3392,7 @@
 
         const qaItems = document.querySelectorAll(".qa-item");
         const totalItems = qaItems.length;
-        ttsTotal.textContent = totalItems;
+        if (ttsTotal) ttsTotal.textContent = totalItems;
 
         let isSpeaking = false;
         let currentIndex = 0;
@@ -2691,18 +3406,30 @@
 
           if (questionEl) {
             const clone = questionEl.cloneNode(true);
-            const btn = clone.querySelector(".speaker-btn");
-            if (btn) btn.remove();
-            const text = clone.textContent || "";
-            questionText = text.replace(/\([^)]*\)/g, "").trim();
+            clone
+              .querySelectorAll(
+                ".speaker-btn, .q-answer-toggle-btn, .q-translation, .translation",
+              )
+              .forEach(function (el) {
+                el.remove();
+              });
+            questionText = (clone.textContent || "")
+              .replace(/\([^)]*\)/g, "")
+              .trim();
           }
 
           if (answerEl) {
             const clone = answerEl.cloneNode(true);
-            const btn = clone.querySelector(".speaker-btn");
-            if (btn) btn.remove();
-            const text = clone.textContent || "";
-            answerText = text.replace(/\([^)]*\)/g, "").trim();
+            clone
+              .querySelectorAll(
+                ".speaker-btn, .q-answer-toggle-btn, .q-translation, .translation",
+              )
+              .forEach(function (el) {
+                el.remove();
+              });
+            answerText = (clone.textContent || "")
+              .replace(/\([^)]*\)/g, "")
+              .trim();
           }
 
           return { question: questionText, answer: answerText };
@@ -2714,13 +3441,18 @@
             return;
           }
 
-          if (qaItems.length === 0) return;
+          if (!qaItems.length) return;
+
+          // The questions and their answers live on the Questions tab.
+          if (activeTab !== "questions") {
+            activateTab("questions");
+          }
 
           isSpeaking = true;
           currentIndex = 0;
-          ttsButton.classList.add("speaking");
-          ttsButtonText.textContent = "⏹ Stop";
-          ttsCounter.textContent = "0";
+          if (ttsButton) ttsButton.classList.add("speaking");
+          if (ttsButtonText) ttsButtonText.textContent = "⏹ Stop";
+          if (ttsCounter) ttsCounter.textContent = "0";
 
           window.speechSynthesis.cancel();
           speakNextItem();
@@ -2735,7 +3467,7 @@
           const item = qaItems[currentIndex];
           const texts = getItemText(item);
 
-          ttsCounter.textContent = currentIndex + 1;
+          if (ttsCounter) ttsCounter.textContent = currentIndex + 1;
 
           speakText(texts.question, function () {
             speakText(texts.answer, function () {
@@ -2751,18 +3483,18 @@
 
         function finishSpeaking() {
           isSpeaking = false;
-          ttsButton.classList.remove("speaking");
-          ttsButtonText.textContent = "🔊 Read All Aloud";
-          ttsCounter.textContent = totalItems;
+          if (ttsButton) ttsButton.classList.remove("speaking");
+          if (ttsButtonText) ttsButtonText.textContent = "🔊 Read All Aloud";
+          if (ttsCounter) ttsCounter.textContent = totalItems;
           window.speechSynthesis.cancel();
         }
 
         function stopSpeaking() {
           isSpeaking = false;
           window.speechSynthesis.cancel();
-          ttsButton.classList.remove("speaking");
-          ttsButtonText.textContent = "🔊 Read All Aloud";
-          ttsCounter.textContent = "0";
+          if (ttsButton) ttsButton.classList.remove("speaking");
+          if (ttsButtonText) ttsButtonText.textContent = "🔊 Read All Aloud";
+          if (ttsCounter) ttsCounter.textContent = "0";
           document
             .querySelectorAll(".speaker-btn.speaking")
             .forEach(function (b) {
@@ -2770,23 +3502,25 @@
             });
         }
 
-        ttsButton.addEventListener("click", function () {
-          if (isSpeaking) {
-            stopSpeaking();
-          } else {
-            currentIndex = 0;
-            ttsCounter.textContent = "0";
-            window.speechSynthesis.cancel();
-            document
-              .querySelectorAll(".speaker-btn.speaking")
-              .forEach(function (b) {
-                b.classList.remove("speaking");
-              });
-            setTimeout(function () {
-              speakAllItems();
-            }, 100);
-          }
-        });
+        if (ttsButton) {
+          ttsButton.addEventListener("click", function () {
+            if (isSpeaking) {
+              stopSpeaking();
+            } else {
+              currentIndex = 0;
+              if (ttsCounter) ttsCounter.textContent = "0";
+              window.speechSynthesis.cancel();
+              document
+                .querySelectorAll(".speaker-btn.speaking")
+                .forEach(function (b) {
+                  b.classList.remove("speaking");
+                });
+              setTimeout(function () {
+                speakAllItems();
+              }, 100);
+            }
+          });
+        }
 
         window.addEventListener("beforeunload", function () {
           if (window.speechSynthesis) {
@@ -2796,34 +3530,28 @@
 
         // ===== ROTATION HANDLER =====
         function handleOrientationChange() {
-          const isLandscape = window.innerWidth > window.innerHeight;
-          const body = document.body;
-          
-          // Add orientation class for potential future use
-          if (isLandscape) {
-            body.setAttribute('data-orientation', 'landscape');
-          } else {
-            body.setAttribute('data-orientation', 'portrait');
-          }
+          document.body.setAttribute(
+            "data-orientation",
+            window.innerWidth > window.innerHeight ? "landscape" : "portrait",
+          );
         }
 
-        // Listen for orientation changes
-        window.addEventListener('orientationchange', function() {
+        window.addEventListener("orientationchange", function () {
           setTimeout(handleOrientationChange, 300);
         });
 
-        window.addEventListener('resize', handleOrientationChange);
+        window.addEventListener("resize", handleOrientationChange);
 
-        // Initial check
-        document.addEventListener('DOMContentLoaded', function() {
-          handleOrientationChange();
-        });
-
-        // Also call after a small delay
+        document.addEventListener("DOMContentLoaded", handleOrientationChange);
         setTimeout(handleOrientationChange, 500);
+
+        // One-time tidy-up for old service-worker caches.
+        if ("serviceWorker" in navigator && navigator.serviceWorker.controller) {
+          navigator.serviceWorker.controller.postMessage("skipWaiting");
+        }
       })();
     </script>
-    
+
     <!-- ===== SERVICE WORKER REGISTRATION ===== -->
     <script>
       (function () {
