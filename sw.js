@@ -1,13 +1,13 @@
 // ===== SERVICE WORKER =====
 // Graded Japanese Readers - Offline Support
 
-const CACHE_NAME = 'jp-readers-v9';
+const CACHE_NAME = 'jp-readers-v10';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './offline.html',
-    './Antonio.png',
+  './antonio-badge-96.png',
 
   // Icons
   './favicon.ico',
@@ -17,12 +17,9 @@ const ASSETS = [
   './icon-144x144.png',
   './icon-192x192.png',
   './icon-512x512.png',
-
-  // Audio
-  './ReaderL01-Fishing-Malaysia.mp4',
-
-  // PDF
-  './ReaderL01-Fishing-Malaysia.pdf'
+  // The 2.8 MB mp4 and 1.7 MB pdf are deliberately NOT precached: they are cached by the
+  // fetch handler the first time they are used, so installing the app does not pull
+  // 4.5 MB over a phone connection.
 ];
 
 // ===== INSTALL =====
