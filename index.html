@@ -1770,6 +1770,25 @@
       .show-translation .translation {
         display: block;
       }
+      /* ===== BRAND MARK (top right) ===== */
+      .antonio-signature {
+        margin-left: auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #b0c4d8;
+        background: #ffffff;
+        flex-shrink: 0;
+      }
+
+      @media (max-width: 700px) {
+        .antonio-signature {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
     </style>
 
     <noscript>
@@ -1859,7 +1878,6 @@
           style="min-width: 50px"
         >
           <source src="ReaderL01-Fishing-Malaysia.mp4" type="audio/mp4" />
-          <source src="ReaderL01-Fishing-Malaysia.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
 
@@ -1870,6 +1888,13 @@
           <option value="1.25">1.25×</option>
         </select>
       </div>
+
+      <!-- ===== BRAND MARK (top right) ===== -->
+      <img
+        src="Antonio.png"
+        alt="ACG Applications"
+        class="antonio-signature"
+      />
     </div>
 
     <!-- ===== TABS ===== -->
@@ -3096,6 +3121,30 @@
 
         const body = document.body;
 
+        // ===== SAVED PREFERENCES =====
+        const PREFS_KEY = "jp-readers-prefs-v1";
+
+        function loadPrefs() {
+          try {
+            return JSON.parse(localStorage.getItem(PREFS_KEY) || "{}") || {};
+          } catch (e) {
+            return {};
+          }
+        }
+
+        function savePrefs(patch) {
+          try {
+            localStorage.setItem(
+              PREFS_KEY,
+              JSON.stringify(Object.assign(loadPrefs(), patch)),
+            );
+          } catch (e) {
+            /* private mode - preferences simply will not persist */
+          }
+        }
+
+        const prefs = loadPrefs();
+
         // ===== FURIGANA & TRANSLATION =====
         const furiganaToggle = document.getElementById("furiganaToggle");
         const translationToggle = document.getElementById("translationToggle");
@@ -3103,18 +3152,25 @@
         if (furiganaToggle) {
           furiganaToggle.addEventListener("change", function () {
             body.classList.toggle("no-furigana", !this.checked);
+            savePrefs({ furigana: this.checked });
           });
         }
 
         if (translationToggle) {
           translationToggle.addEventListener("change", function () {
             body.classList.toggle("show-translation", this.checked);
+            savePrefs({ translation: this.checked });
           });
         }
 
-        // Furigana on, translation off on first load.
-        body.classList.remove("no-furigana");
-        body.classList.remove("show-translation");
+        // Restore the learner’s last choice; first visit defaults to furigana on,
+        // translation off.
+        const startFurigana = prefs.furigana !== false;
+        const startTranslation = prefs.translation === true;
+        if (furiganaToggle) furiganaToggle.checked = startFurigana;
+        if (translationToggle) translationToggle.checked = startTranslation;
+        body.classList.toggle("no-furigana", !startFurigana);
+        body.classList.toggle("show-translation", startTranslation);
 
         // ===== TABS =====
         const headerEl = document.getElementById("stickyHeader");
@@ -3275,7 +3331,12 @@
         const fontSizeDisplay = document.getElementById("fontSizeDisplay");
 
         if (fontSizeSlider && fontSizeDisplay) {
-          const initialSize = fontSizeSlider.value;
+          const savedSize = parseInt(prefs.fontSize, 10);
+          const initialSize =
+            savedSize >= 12 && savedSize <= 28
+              ? String(savedSize)
+              : fontSizeSlider.value;
+          fontSizeSlider.value = initialSize;
           document.body.style.fontSize = initialSize + "px";
           fontSizeDisplay.textContent = initialSize;
 
@@ -3283,6 +3344,7 @@
             const size = this.value;
             document.body.style.fontSize = size + "px";
             fontSizeDisplay.textContent = size;
+            savePrefs({ fontSize: size });
           });
         }
 

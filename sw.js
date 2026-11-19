@@ -1,12 +1,13 @@
 // ===== SERVICE WORKER =====
 // Graded Japanese Readers - Offline Support
 
-const CACHE_NAME = 'jp-readers-v8';
+const CACHE_NAME = 'jp-readers-v9';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './offline.html',
+    './Antonio.png',
 
   // Icons
   './favicon.ico',
