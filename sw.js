@@ -1,7 +1,7 @@
 // ===== SERVICE WORKER =====
-// Graded Japanese Readers - Offline Support
+// Fishing Graded Japanese Readers - Offline Support
 
-const CACHE_NAME = 'jp-readers-v10';
+const CACHE_NAME = 'jp-readers-v11';
 const ASSETS = [
   './',
   './index.html',
